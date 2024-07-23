@@ -1,16 +1,20 @@
-Gaudi Recipe Runner
+# Intel Gaudi Samples
 ========================================
 
-The tool reproduces networks written in Synapse API (C\C++)
-or serialized graphs and runs them on Gaudi.
+The tool reproduces networks written in Synapse API (C\C++) or serialized graphs and runs them on Gaudi.
 
-Build:
+## Samples
+
+- [bandwidthTest](./bandwidthTest/README.md)
+- [gemmTest](./gemmTest/README.md)
+
+## Build:
 -----------------------------------------
 
 make dev
 
 
-Run:
+## Run:
 ------------------------------------------
 
 ./gaudi_recipe_runner [-c <repro .cpp path>] <compiled_recipe_path>
