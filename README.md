@@ -17,4 +17,3 @@ make dev
 ## Run:
 ------------------------------------------
 
-./gaudi_recipe_runner [-c <repro .cpp path>] <compiled_recipe_path>
