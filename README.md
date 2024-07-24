@@ -8,12 +8,3 @@ The tool reproduces networks written in Synapse API (C\C++) or serialized graphs
 - [bandwidthTest](./bandwidthTest/README.md)
 - [gemmTest](./gemmTest/README.md)
 
-## Build:
------------------------------------------
-
-make dev
-
-
-## Run:
-------------------------------------------
-
