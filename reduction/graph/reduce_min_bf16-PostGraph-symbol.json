@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor-910",
+      "inputs": []
+    },
+    {
+      "op": "reduce_min_bf16",
+      "name": "reduce_min_bf16_complex/reduce_min_bf16_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "tensor-910  |  int32  |  Sizes = [256]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1024, 4]  |  data = 0x55cdde5a4400, sizeInBytes = 1024  |  location = in DRAM  |  dramOffset = 0x10000002400  |  isStaticParam  |  bufferDtype=float32  |  ",
+        "output_0": "Y  |  bf16  |  Sizes = [64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 256, 2, 2]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1
+  ],
+  "node_row_ptr": [0, 1, 2],
+  "heads": [[2, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

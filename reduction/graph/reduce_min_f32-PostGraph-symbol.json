@@ -1,0 +1,77 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "cast_bf16_to_f32",
+      "name": "reduce_min_f32_complex/cast_bf16_to_f32_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "f32-1_553  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor-726",
+      "inputs": []
+    },
+    {
+      "op": "reduce_min_f32",
+      "name": "reduce_min_f32_complex/reduce_min_f32_2_complex/reduce_min_f32_0",
+      "attrs": {
+        "input:0": "f32-1_553  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "input:1": "tensor-726  |  int32  |  Sizes = [256]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1024, 4]  |  data = 0x55cdde545800, sizeInBytes = 1024  |  location = in DRAM  |  dramOffset = 0x10000005100  |  isStaticParam  |  bufferDtype=float32  |  ",
+        "output_0": "f32-3_554  |  float32  |  Sizes = [64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 512, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isAliased = _reshaped_727, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0], [2, 0, 0]]
+    },
+    {
+      "op": "StaticReshape",
+      "name": "reduce_min_f32_complex/cast_f32_to_bf16_4_reshape_TPC_out1",
+      "attrs": {
+        "input:0": "f32-3_554  |  float32  |  Sizes = [64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 512, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isAliased = _reshaped_727, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "_reshaped_727  |  float32  |  Sizes = [1,64,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 32768, 512, 4]  |  data = 0, sizeInBytes = 32768  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[3, 0, 0]]
+    },
+    {
+      "op": "cast_f32_to_bf16",
+      "name": "reduce_min_f32_complex/cast_f32_to_bf16_4_optimized",
+      "attrs": {
+        "input:0": "_reshaped_727  |  float32  |  Sizes = [1,64,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 32768, 512, 4]  |  data = 0, sizeInBytes = 32768  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
+        "output_0": "_reshaped_728  |  bf16  |  Sizes = [1,64,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 16384, 256, 2]  |  data = 0, sizeInBytes = 16384  |  isAliased = Y, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"3"
+      },
+      "inputs": [[4, 0, 0]]
+    },
+    {
+      "op": "StaticReshape",
+      "name": "reduce_min_f32_complex/cast_f32_to_bf16_4_reshape_TPC_out0",
+      "attrs": {
+        "input:0": "_reshaped_728  |  bf16  |  Sizes = [1,64,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 16384, 256, 2]  |  data = 0, sizeInBytes = 16384  |  isAliased = Y, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "Y  |  bf16  |  Sizes = [64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 256, 2, 2]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"4"
+      },
+      "inputs": [[5, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    2
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6],
+  "heads": [[6, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
