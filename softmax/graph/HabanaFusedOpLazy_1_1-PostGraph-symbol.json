@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "StaticReshape",
+      "name": "TPC61_complex/softmax_fwd_bf16_0_reshape_TPC_out1",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  bf16  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 2]  |  data = 0, sizeInBytes = 1048576  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "_reshaped_354  |  bf16  |  Sizes = [1,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_0_/placeholder/0, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "softmax_fwd_bf16",
+      "name": "TPC61_complex/softmax_fwd_bf16_0_optimized",
+      "attrs": {
+        "input:0": "_reshaped_354  |  bf16  |  Sizes = [1,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_0_/placeholder/0, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "_reshaped_355  |  bf16  |  Sizes = [1,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_1_id_18_aten___softmax, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0]]
+    },
+    {
+      "op": "StaticReshape",
+      "name": "TPC61_complex/softmax_fwd_bf16_0_reshape_TPC_out0",
+      "attrs": {
+        "input:0": "_reshaped_355  |  bf16  |  Sizes = [1,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_1_id_18_aten___softmax, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "tensor_1_id_18_aten___softmax  |  bf16  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 2]  |  data = 0, sizeInBytes = 1048576  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[2, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0
+  ],
+  "node_row_ptr": [0, 1, 2, 3],
+  "heads": [[3, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
