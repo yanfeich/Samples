@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor_1_/placeholder/1",
+      "inputs": []
+    },
+    {
+      "op": "rms_norm_ex_fwd_f32",
+      "name": "TPC64",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  float32  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "tensor_1_/placeholder/1  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "tensor_4  |  float32  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  isPersistent  |  userMemorySection(type=Persistent, id=8)  |  ",
+        "output_1": "tensor_5  |  float32  |  Sizes = [64,2,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 8, 4, 4]  |  data = 0, sizeInBytes = 512  |  isPersistent  |  userMemorySection(type=Persistent, id=9)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1
+  ],
+  "node_row_ptr": [0, 1, 2],
+  "heads": [[2, 0, 0], [2, 1, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
