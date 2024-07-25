@@ -1,0 +1,255 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "add_bf16",
+      "name": "add_bf16_0_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "add_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "add_f32",
+      "name": "add_f32_0_1",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "add_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "add_f16",
+      "name": "add_f16_0_2",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "add_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "mult_bf16",
+      "name": "mult_bf16_1_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "mult_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=8)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"3"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "mult_f32",
+      "name": "mult_f32_1_1",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "mult_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=9)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"4"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "mult_f16",
+      "name": "mult_f16_1_2",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "mult_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=10)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"5"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "sub_bf16",
+      "name": "sub_bf16_2_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "sub_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=11)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"6"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "sub_f32",
+      "name": "sub_f32_2_1",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "sub_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=12)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"7"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "sub_f16",
+      "name": "sub_f16_2_2",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "sub_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=13)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"8"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "pow_bf16",
+      "name": "pow_bf16_3_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "pow_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=14)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"9"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "pow_f32",
+      "name": "pow_f32_3_1",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "pow_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=15)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"10"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "pow_f16",
+      "name": "pow_f16_3_2",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "pow_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=16)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"11"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "div_f32",
+      "name": "div_f32_4_1",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "div_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=17)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"12"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "mod_f32",
+      "name": "mod_f32_5_1",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "mod_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=18)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"13"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "min_bf16",
+      "name": "min_bf16_6_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "min_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=19)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"14"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "min_f32",
+      "name": "min_f32_6_1",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "min_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=20)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"15"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "min_f16",
+      "name": "min_f16_6_2",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "min_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=21)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"16"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "max_bf16",
+      "name": "max_bf16_7_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "max_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=22)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"17"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "max_f32",
+      "name": "max_f32_7_1",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "max_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=23)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"18"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "max_f16",
+      "name": "max_f16_7_2",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "max_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=24)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"19"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+  "heads": [[1, 0, 0], [2, 0, 0], [3, 0, 0], [4, 0, 0], [5, 0, 0], [6, 0, 0], [7, 0, 0], [8, 0, 0], [9, 0, 0], [10, 0, 0], [11, 0, 0], [12, 0, 0], [13, 0, 0], [14, 0, 0], [15, 0, 0], [16, 0, 0], [17, 0, 0], [18, 0, 0], [19, 0, 0], [20, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

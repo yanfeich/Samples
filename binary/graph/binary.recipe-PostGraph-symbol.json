@@ -1,0 +1,275 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "cast_bf16_to_f32",
+      "name": "mod_f32_5_1_complex/cast_bf16_to_f32_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "f32-2_49  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "cast_bf16_to_f32",
+      "name": "mod_f32_5_1_complex/cast_bf16_to_f32_3",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "f32-4_50  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "mod_f32",
+      "name": "mod_f32_5_1_complex/mod_f32_5",
+      "attrs": {
+        "input:0": "f32-2_49  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "input:1": "f32-4_50  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
+        "output_0": "f32-6_51  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_49, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[1, 0, 0], [2, 0, 0]]
+    },
+    {
+      "op": "add_bf16",
+      "name": "add_bf16_0_0_complex/add_bf16_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "add_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"3"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xC8016D32_1_f32",
+      "name": "fusedTPCNode_0_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "add_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"4"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xC8016D32_2_f16",
+      "name": "fusedTPCNode_0_1",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "add_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x70000000000  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"5"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "mult_bf16",
+      "name": "mult_bf16_1_0_complex/mult_bf16_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "mult_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x80000000000  |  userMemorySection(type=Persistent, id=8)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"6"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0x1B23D959_3_f32",
+      "name": "fusedTPCNode_0_2",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "mult_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x90000000000  |  userMemorySection(type=Persistent, id=9)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"7"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0x1B23D959_4_f16",
+      "name": "fusedTPCNode_0_3",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "mult_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0xa0000000000  |  userMemorySection(type=Persistent, id=10)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"8"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "sub_bf16",
+      "name": "sub_bf16_2_0_complex/sub_bf16_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "sub_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0xb0000000000  |  userMemorySection(type=Persistent, id=11)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"9"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xC27F6A39_5_f32",
+      "name": "fusedTPCNode_0_4",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "sub_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0xc0000000000  |  userMemorySection(type=Persistent, id=12)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"10"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xC27F6A39_6_f16",
+      "name": "fusedTPCNode_0_5",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "sub_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0xd0000000000  |  userMemorySection(type=Persistent, id=13)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"11"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "pow_bf16",
+      "name": "pow_bf16_3_0_complex/pow_bf16_0_complex/pow_bf16_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "pow_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0xe0000000000  |  userMemorySection(type=Persistent, id=14)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"12"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0x5D0002EB_7_f32",
+      "name": "fusedTPCNode_0_6",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "pow_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0xf0000000000  |  userMemorySection(type=Persistent, id=15)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"13"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0x5D0002EB_8_f16",
+      "name": "fusedTPCNode_0_7",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "pow_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x100000000000  |  userMemorySection(type=Persistent, id=16)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"14"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xFEA303EF_9_f32",
+      "name": "fusedTPCNode_0_8",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "div_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x110000000000  |  userMemorySection(type=Persistent, id=17)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"15"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "cast_f32_to_bf16",
+      "name": "mod_f32_5_1_complex/cast_f32_to_bf16_7",
+      "attrs": {
+        "input:0": "f32-6_51  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_49, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "mod_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x120000000000  |  userMemorySection(type=Persistent, id=18)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"16"
+      },
+      "inputs": [[3, 0, 0]]
+    },
+    {
+      "op": "min_bf16",
+      "name": "min_bf16_6_0_complex/min_bf16_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "min_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x130000000000  |  userMemorySection(type=Persistent, id=19)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"17"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xB439BCF6_A_f32",
+      "name": "fusedTPCNode_0_9",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "min_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x140000000000  |  userMemorySection(type=Persistent, id=20)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"18"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xB439BCF6_B_f16",
+      "name": "fusedTPCNode_0_10",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "min_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x150000000000  |  userMemorySection(type=Persistent, id=21)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"19"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "max_bf16",
+      "name": "max_bf16_7_0_complex/max_bf16_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "max_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x160000000000  |  userMemorySection(type=Persistent, id=22)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"20"
+      },
+      "inputs": [[0, 0, 0], [0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0x760FF270_C_f32",
+      "name": "fusedTPCNode_0_11",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "max_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x170000000000  |  userMemorySection(type=Persistent, id=23)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"21"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0x760FF270_D_f16",
+      "name": "fusedTPCNode_0_12",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "max_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x180000000000  |  userMemorySection(type=Persistent, id=24)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"22"
+      },
+      "inputs": [[0, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+  "heads": [[4, 0, 0], [5, 0, 0], [6, 0, 0], [7, 0, 0], [8, 0, 0], [9, 0, 0], [10, 0, 0], [11, 0, 0], [12, 0, 0], [13, 0, 0], [14, 0, 0], [15, 0, 0], [16, 0, 0], [17, 0, 0], [18, 0, 0], [19, 0, 0], [20, 0, 0], [21, 0, 0], [22, 0, 0], [23, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
