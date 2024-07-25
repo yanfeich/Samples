@@ -1,0 +1,112 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "LogicalTranspose",
+      "name": "Transpose66_splitted0_0",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  bf16  |  Sizes = [64,2,32,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 256, 2]  |  data = 0, sizeInBytes = 1048576  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "tensor_0_/placeholder/0_c2000  |  bf16  |  Sizes = [2,32,64,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 8192, 256, 16384, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_0_/placeholder/0, type = alias, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "Parameters": "permutation: (0,3,1,2)",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "DmaTranspose",
+      "name": "Transpose66_splitted0_1",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0_c2000  |  bf16  |  Sizes = [2,32,64,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 8192, 256, 16384, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_0_/placeholder/0, type = alias, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "output_0": "tensor_0_/placeholder/0_mid_transpose  |  bf16  |  Sizes = [128,2,32,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 8192, 4096, 128, 2]  |  data = 0, sizeInBytes = 1048576  |  location = in DRAM  |  dramOffset = 0x60000000000  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0]]
+    },
+    {
+      "op": "LogicalTranspose",
+      "name": "Transpose66_splitted1_0",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0_mid_transpose  |  bf16  |  Sizes = [128,2,32,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 8192, 4096, 128, 2]  |  data = 0, sizeInBytes = 1048576  |  location = in DRAM  |  dramOffset = 0x60000000000  |  ",
+        "output_0": "tensor_0_/placeholder/0_mid_transpose_c2001  |  bf16  |  Sizes = [2,128,32,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 4096, 8192, 128, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_0_/placeholder/0_mid_transpose, type = alias, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "Parameters": "permutation: (0,1,3,2)",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[2, 0, 0]]
+    },
+    {
+      "op": "DmaTranspose",
+      "name": "Transpose66_splitted1_1",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0_mid_transpose_c2001  |  bf16  |  Sizes = [2,128,32,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 4096, 8192, 128, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_0_/placeholder/0_mid_transpose, type = alias, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "output_0": "tensor_1_id_20_aten__permute  |  bf16  |  Sizes = [64,2,128,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 64, 2]  |  data = 0, sizeInBytes = 1048576  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"3"
+      },
+      "inputs": [[3, 0, 0]]
+    },
+    {
+      "op": "StaticReshape",
+      "name": "TPC68_complex/mult_fwd_bf16_0_reshape_TPC_out1",
+      "attrs": {
+        "input:0": "tensor_1_id_20_aten__permute  |  bf16  |  Sizes = [64,2,128,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 64, 2]  |  data = 0, sizeInBytes = 1048576  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "output_0": "_reshaped_735  |  bf16  |  Sizes = [64,2,32,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 256, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_1_id_20_aten__permute, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"4"
+      },
+      "inputs": [[4, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor_2_/placeholder/1",
+      "inputs": []
+    },
+    {
+      "op": "cast_i32_to_bf16",
+      "name": "TPC67",
+      "attrs": {
+        "input:0": "tensor_2_/placeholder/1  |  int32  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [4, 4]  |  data = 0, sizeInBytes = 4  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "tensor_4  |  bf16  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2, 2]  |  data = 0, sizeInBytes = 2  |  location = in DRAM  |  dramOffset = 0x100000  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"5"
+      },
+      "inputs": [[6, 0, 0]]
+    },
+    {
+      "op": "mult_fwd_bf16",
+      "name": "TPC68_complex/mult_fwd_bf16_0_optimized",
+      "attrs": {
+        "input:0": "_reshaped_735  |  bf16  |  Sizes = [64,2,32,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 256, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_1_id_20_aten__permute, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:1": "tensor_4  |  bf16  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2, 2]  |  data = 0, sizeInBytes = 2  |  location = in DRAM  |  dramOffset = 0x100000  |  ",
+        "output_0": "_reshaped_736  |  bf16  |  Sizes = [64,2,32,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 256, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_3_id_22_aten__mul, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"6"
+      },
+      "inputs": [[5, 0, 0], [7, 0, 0]]
+    },
+    {
+      "op": "StaticReshape",
+      "name": "TPC68_complex/mult_fwd_bf16_0_reshape_TPC_out0",
+      "attrs": {
+        "input:0": "_reshaped_736  |  bf16  |  Sizes = [64,2,32,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 256, 2]  |  data = 0, sizeInBytes = 1048576  |  isAliased = tensor_3_id_22_aten__mul, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "tensor_3_id_22_aten__mul  |  bf16  |  Sizes = [64,2,128,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 64, 2]  |  data = 0, sizeInBytes = 1048576  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"7"
+      },
+      "inputs": [[8, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    6
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "heads": [[9, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

@@ -1,0 +1,77 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "DmaTranspose",
+      "name": "Transpose3_0",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  float32  |  Sizes = [64,2,32,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 512, 4]  |  data = 0, sizeInBytes = 2097152  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "tensor_1_id_6_aten__permute  |  float32  |  Sizes = [64,2,128,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 128, 4]  |  data = 0, sizeInBytes = 2097152  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "StaticReshape",
+      "name": "TPC5_complex/mult_fwd_f32_0_reshape_TPC_out1",
+      "attrs": {
+        "input:0": "tensor_1_id_6_aten__permute  |  float32  |  Sizes = [64,2,128,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 128, 4]  |  data = 0, sizeInBytes = 2097152  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "output_0": "_reshaped_177  |  float32  |  Sizes = [64,2,64,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 256, 4]  |  data = 0, sizeInBytes = 2097152  |  isAliased = tensor_1_id_6_aten__permute, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor_2_/placeholder/1",
+      "inputs": []
+    },
+    {
+      "op": "cast_i32_to_f32",
+      "name": "TPC4",
+      "attrs": {
+        "input:0": "tensor_2_/placeholder/1  |  int32  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [4, 4]  |  data = 0, sizeInBytes = 4  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "tensor_4  |  float32  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [4, 4]  |  data = 0, sizeInBytes = 4  |  location = in DRAM  |  dramOffset = 0x200000  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[3, 0, 0]]
+    },
+    {
+      "op": "mult_fwd_f32",
+      "name": "TPC5_complex/mult_fwd_f32_0_optimized",
+      "attrs": {
+        "input:0": "_reshaped_177  |  float32  |  Sizes = [64,2,64,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 256, 4]  |  data = 0, sizeInBytes = 2097152  |  isAliased = tensor_1_id_6_aten__permute, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:1": "tensor_4  |  float32  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [4, 4]  |  data = 0, sizeInBytes = 4  |  location = in DRAM  |  dramOffset = 0x200000  |  ",
+        "output_0": "_reshaped_178  |  float32  |  Sizes = [64,2,64,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 256, 4]  |  data = 0, sizeInBytes = 2097152  |  isAliased = tensor_3_id_11_aten__mul, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"3"
+      },
+      "inputs": [[2, 0, 0], [4, 0, 0]]
+    },
+    {
+      "op": "StaticReshape",
+      "name": "TPC5_complex/mult_fwd_f32_0_reshape_TPC_out0",
+      "attrs": {
+        "input:0": "_reshaped_178  |  float32  |  Sizes = [64,2,64,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 256, 4]  |  data = 0, sizeInBytes = 2097152  |  isAliased = tensor_3_id_11_aten__mul, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "tensor_3_id_11_aten__mul  |  float32  |  Sizes = [64,2,128,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 128, 4]  |  data = 0, sizeInBytes = 2097152  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"4"
+      },
+      "inputs": [[5, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    3
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6],
+  "heads": [[6, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

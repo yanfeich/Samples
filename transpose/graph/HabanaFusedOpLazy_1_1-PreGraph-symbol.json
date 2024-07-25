@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "Transpose",
+      "name": "Transpose66",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  bf16  |  Sizes = [64,2,32,128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 256, 2]  |  data = 0, sizeInBytes = 1048576  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "tensor_1_id_20_aten__permute  |  bf16  |  Sizes = [64,2,128,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 64, 2]  |  data = 0, sizeInBytes = 1048576  |  ",
+        "Parameters": "permutation: (1,0,2,3)",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor_2_/placeholder/1",
+      "inputs": []
+    },
+    {
+      "op": "cast_i32_to_bf16",
+      "name": "TPC67",
+      "attrs": {
+        "input:0": "tensor_2_/placeholder/1  |  int32  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [4, 4]  |  data = 0, sizeInBytes = 4  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "tensor_4  |  bf16  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2, 2]  |  data = 0, sizeInBytes = 2  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[2, 0, 0]]
+    },
+    {
+      "op": "mult_fwd_bf16",
+      "name": "TPC68",
+      "attrs": {
+        "input:0": "tensor_1_id_20_aten__permute  |  bf16  |  Sizes = [64,2,128,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 64, 2]  |  data = 0, sizeInBytes = 1048576  |  ",
+        "input:1": "tensor_4  |  bf16  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2, 2]  |  data = 0, sizeInBytes = 2  |  ",
+        "output_0": "tensor_3_id_22_aten__mul  |  bf16  |  Sizes = [64,2,128,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1048576, 16384, 8192, 64, 2]  |  data = 0, sizeInBytes = 1048576  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[1, 0, 0], [3, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    2
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4],
+  "heads": [[4, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
