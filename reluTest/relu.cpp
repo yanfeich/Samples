@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
 
     //************************************************ create relu node
     std::string guid = "relu_f32";
-    std::string node_name = "RELU";
+    std::string node_name = "RELU_1";
 
     ns_ReluKernel::ParamsV2 relu_params;
     relu_params.threshold.f = 0.0;
@@ -126,6 +126,7 @@ int main(int argc, char *argv[])
     std::cout << "ReLU synNodeCreate status: " << status << std::endl;
     assert(status == synSuccess && "Failed to call synNodeCreate()");
 
+    node_name = "RELU_2";
     status = synNodeCreate(graphHandle,
                            mid.data(),
                            outputs.data(),

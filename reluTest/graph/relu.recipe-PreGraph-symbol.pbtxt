@@ -1,0 +1,147 @@
+node {
+  name: "X"
+  op: "Placeholder"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 256
+        }
+        dim {
+          size: 1
+        }
+        dim {
+          size: 1
+        }
+        dim {
+          size: 1
+        }
+        dim {
+          size: 1
+        }
+      }
+    }
+  }
+  attr {
+    key: "synDataType"
+    value {
+      s: "float32"
+    }
+  }
+}
+node {
+  name: "RELU_1"
+  op: "relu_f32"
+  input: "X"
+  attr {
+    key: "Bundle_idx"
+    value {
+      s: "N/A"
+    }
+  }
+  attr {
+    key: "Exec_idx"
+    value {
+      s: "0"
+    }
+  }
+  attr {
+    key: "Op_idx"
+    value {
+      s: "N/A"
+    }
+  }
+  attr {
+    key: "inputTensor:0"
+    value {
+      s: "X  |  Sizes = [256]  |  float32  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1024, 4]  |  data = 0, sizeInBytes = 1024  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  "
+    }
+  }
+  attr {
+    key: "outputTensor:0"
+    value {
+      s: "B  |  Sizes = [256]  |  float32  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1024, 4]  |  data = 0, sizeInBytes = 1024  |  "
+    }
+  }
+}
+node {
+  name: "RELU_2"
+  op: "relu_f32"
+  input: "RELU_1"
+  attr {
+    key: "Bundle_idx"
+    value {
+      s: "N/A"
+    }
+  }
+  attr {
+    key: "Exec_idx"
+    value {
+      s: "1"
+    }
+  }
+  attr {
+    key: "Op_idx"
+    value {
+      s: "N/A"
+    }
+  }
+  attr {
+    key: "inputTensor:0"
+    value {
+      s: "B  |  Sizes = [256]  |  float32  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1024, 4]  |  data = 0, sizeInBytes = 1024  |  "
+    }
+  }
+  attr {
+    key: "outputTensor:0"
+    value {
+      s: "Y  |  Sizes = [256]  |  float32  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1024, 4]  |  data = 0, sizeInBytes = 1024  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  "
+    }
+  }
+}
+node {
+  name: "Y"
+  op: "OutputTensor"
+  input: "RELU_2"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 256
+        }
+        dim {
+          size: 1
+        }
+        dim {
+          size: 1
+        }
+        dim {
+          size: 1
+        }
+        dim {
+          size: 1
+        }
+      }
+    }
+  }
+  attr {
+    key: "synDataType"
+    value {
+      s: "float32"
+    }
+  }
+}
