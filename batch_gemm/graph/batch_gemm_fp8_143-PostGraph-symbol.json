@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "A",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "B",
+      "inputs": []
+    },
+    {
+      "op": "BatchGemm",
+      "name": "BatchGemm",
+      "attrs": {
+        "input:0": "A  |  hfloat8  |  Sizes = [64,32,1,128]  |  expBias = 7, scale = 1  |    |  ModelParam = 0  |  strides = [262144, 4096, 128, 128, 1]  |  data = 0, sizeInBytes = 262144  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "B  |  hfloat8  |  Sizes = [64,32,1024,128]  |  expBias = 7, scale = 1  |    |  ModelParam = 0  |  strides = [268435456, 4194304, 131072, 128, 1]  |  data = 0, sizeInBytes = 268435456  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "C  |  hfloat8  |  Sizes = [64,32,1,1024]  |  expBias = 7, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 1024, 1024, 1]  |  data = 0, sizeInBytes = 2097152  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Parameters": "transpose_a=false, transpose_b=true",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1
+  ],
+  "node_row_ptr": [0, 1, 2],
+  "heads": [[2, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
