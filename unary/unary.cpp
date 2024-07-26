@@ -64,19 +64,30 @@ int main(int argc, char *argv[])
 
     //************************************************ create rms node
     std::vector<std::string> unary_guids = {"relu", "abs", "exp", "sigmoid", "sign", "sqrt",
-                                            "tanh", "erf", "log", "neg", "tan", "softsign", "silu"};
+                                            "tanh", "erf", "log", "neg", "tan", "softsign", "silu_fwd"};
     std::vector<std::string> dtypes = {"bf16", "f32", "f16"};
 
     for (size_t i = 0; i < unary_guids.size(); i++)
     {
         for (size_t j = 0; j < dtypes.size(); j++)
         {
-            if (dtypes[j] == "f16" || dtypes[j] == "bf16")
+            if (dtypes[j] == "bf16")
             {
                 if (unary_guids[i] == "erf" ||
                     unary_guids[i] == "tan" ||
                     unary_guids[i] == "tanh" ||
-                    unary_guids[i] == "silu" ||
+                    unary_guids[i] == "log")
+                {
+                    continue;
+                }
+            }
+
+            if (dtypes[j] == "f16")
+            {
+                if (unary_guids[i] == "erf" ||
+                    unary_guids[i] == "tan" ||
+                    unary_guids[i] == "tanh" ||
+                    unary_guids[i] == "silu_fwd" ||
                     unary_guids[i] == "log")
                 {
                     continue;

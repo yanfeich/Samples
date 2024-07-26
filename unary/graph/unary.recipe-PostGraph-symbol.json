@@ -10,7 +10,7 @@
       "name": "sign_f32_4_1_complex/cast_bf16_to_f32_0",
       "attrs": {
         "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
-        "output_0": "f32-2_47  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "output_0": "f32-2_48  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"0"
       },
@@ -21,7 +21,7 @@
       "name": "sign_f16_4_2_complex/cast_bf16_to_f16_0",
       "attrs": {
         "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
-        "output_0": "f16-2_49  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x140000000000  |  ",
+        "output_0": "f16-2_50  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x140000000000  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"1"
       },
@@ -32,7 +32,7 @@
       "name": "erf_f32_7_1_complex/erf_f32_0_cast_input0",
       "attrs": {
         "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
-        "output_0": "erf_f32_7_1_complex/erf_f32_0_cast_input0_246  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
+        "output_0": "erf_f32_7_1_complex/erf_f32_0_cast_input0_251  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"2"
       },
@@ -43,7 +43,7 @@
       "name": "tan_f32_10_1_complex/cast_bf16_to_f32_0",
       "attrs": {
         "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
-        "output_0": "f32-2_63  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x10000000  |  ",
+        "output_0": "f32-2_64  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x10000000  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"3"
       },
@@ -54,7 +54,7 @@
       "name": "softsign_f32_11_1_complex/cast_bf16_to_f32_0",
       "attrs": {
         "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
-        "output_0": "f32-2_65  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x18000000  |  ",
+        "output_0": "f32-2_66  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x18000000  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"4"
       },
@@ -65,7 +65,7 @@
       "name": "softsign_f16_11_2_complex/cast_bf16_to_f16_0",
       "attrs": {
         "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
-        "output_0": "f16-2_67  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x210000000000  |  ",
+        "output_0": "f16-2_68  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x210000000000  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"5"
       },
@@ -75,8 +75,8 @@
       "op": "sign_f32",
       "name": "sign_f32_4_1_complex/sign_f32_3_complex/sign_f32_0",
       "attrs": {
-        "input:0": "f32-2_47  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
-        "output_0": "f32-4_48  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_47, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f32-2_48  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "output_0": "f32-4_49  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_48, type = alias, offset: 0  |  location = in DRAM  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"6"
       },
@@ -86,8 +86,8 @@
       "op": "sign_f16",
       "name": "sign_f16_4_2_complex/sign_f16_3_complex/sign_f16_0",
       "attrs": {
-        "input:0": "f16-2_49  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x140000000000  |  ",
-        "output_0": "f16-4_50  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = f16-2_49, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f16-2_50  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x140000000000  |  ",
+        "output_0": "f16-4_51  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = f16-2_50, type = alias, offset: 0  |  location = in DRAM  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"7"
       },
@@ -97,8 +97,8 @@
       "op": "erf_f32",
       "name": "erf_f32_7_1_complex/erf_f32_0",
       "attrs": {
-        "input:0": "erf_f32_7_1_complex/erf_f32_0_cast_input0_246  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
-        "output_0": "erf_f32_7_1_complex/erf_f32_0_cast_output0_247  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = erf_f32_7_1_complex/erf_f32_0_cast_input0_246, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "erf_f32_7_1_complex/erf_f32_0_cast_input0_251  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
+        "output_0": "erf_f32_7_1_complex/erf_f32_0_cast_output0_252  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = erf_f32_7_1_complex/erf_f32_0_cast_input0_251, type = alias, offset: 0  |  location = in DRAM  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"8"
       },
@@ -108,8 +108,8 @@
       "op": "tan_f32",
       "name": "tan_f32_10_1_complex/tan_f32_3_complex/tan_f32_0",
       "attrs": {
-        "input:0": "f32-2_63  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x10000000  |  ",
-        "output_0": "f32-4_64  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_63, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f32-2_64  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x10000000  |  ",
+        "output_0": "f32-4_65  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_64, type = alias, offset: 0  |  location = in DRAM  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"9"
       },
@@ -119,8 +119,8 @@
       "op": "softsign_f32",
       "name": "softsign_f32_11_1_complex/softsign_f32_3_complex/softsign_f32_0",
       "attrs": {
-        "input:0": "f32-2_65  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x18000000  |  ",
-        "output_0": "f32-4_66  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_65, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f32-2_66  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x18000000  |  ",
+        "output_0": "f32-4_67  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_66, type = alias, offset: 0  |  location = in DRAM  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"10"
       },
@@ -130,8 +130,8 @@
       "op": "softsign_f16",
       "name": "softsign_f16_11_2_complex/softsign_f16_3_complex/softsign_f16_0",
       "attrs": {
-        "input:0": "f16-2_67  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x210000000000  |  ",
-        "output_0": "f16-4_68  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = f16-2_67, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f16-2_68  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x210000000000  |  ",
+        "output_0": "f16-4_69  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = f16-2_68, type = alias, offset: 0  |  location = in DRAM  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"11"
       },
@@ -284,7 +284,7 @@
       "op": "cast_f32_to_bf16",
       "name": "sign_f32_4_1_complex/cast_f32_to_bf16_5",
       "attrs": {
-        "input:0": "f32-4_48  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_47, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f32-4_49  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_48, type = alias, offset: 0  |  location = in DRAM  |  ",
         "output_0": "sign_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x120000000000  |  userMemorySection(type=Persistent, id=18)  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"25"
@@ -295,7 +295,7 @@
       "op": "cast_f16_to_bf16",
       "name": "sign_f16_4_2_complex/cast_f16_to_bf16_5",
       "attrs": {
-        "input:0": "f16-4_50  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = f16-2_49, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f16-4_51  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = f16-2_50, type = alias, offset: 0  |  location = in DRAM  |  ",
         "output_0": "sign_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x130000000000  |  userMemorySection(type=Persistent, id=19)  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"26"
@@ -350,7 +350,7 @@
       "op": "cast_f32_to_bf16",
       "name": "erf_f32_7_1_complex/erf_f32_0_cast_output0",
       "attrs": {
-        "input:0": "erf_f32_7_1_complex/erf_f32_0_cast_output0_247  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = erf_f32_7_1_complex/erf_f32_0_cast_input0_246, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "erf_f32_7_1_complex/erf_f32_0_cast_output0_252  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = erf_f32_7_1_complex/erf_f32_0_cast_input0_251, type = alias, offset: 0  |  location = in DRAM  |  ",
         "output_0": "erf_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x180000000000  |  userMemorySection(type=Persistent, id=24)  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"31"
@@ -405,7 +405,7 @@
       "op": "cast_f32_to_bf16",
       "name": "tan_f32_10_1_complex/cast_f32_to_bf16_5",
       "attrs": {
-        "input:0": "f32-4_64  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_63, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f32-4_65  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_64, type = alias, offset: 0  |  location = in DRAM  |  ",
         "output_0": "tan_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x1d0000000000  |  userMemorySection(type=Persistent, id=29)  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"36"
@@ -427,7 +427,7 @@
       "op": "cast_f32_to_bf16",
       "name": "softsign_f32_11_1_complex/cast_f32_to_bf16_5",
       "attrs": {
-        "input:0": "f32-4_66  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_65, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f32-4_67  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = f32-2_66, type = alias, offset: 0  |  location = in DRAM  |  ",
         "output_0": "softsign_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x1f0000000000  |  userMemorySection(type=Persistent, id=31)  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"38"
@@ -438,7 +438,7 @@
       "op": "cast_f16_to_bf16",
       "name": "softsign_f16_11_2_complex/cast_f16_to_bf16_5",
       "attrs": {
-        "input:0": "f16-4_68  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = f16-2_67, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:0": "f16-4_69  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = f16-2_68, type = alias, offset: 0  |  location = in DRAM  |  ",
         "output_0": "softsign_f16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x200000000000  |  userMemorySection(type=Persistent, id=32)  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"39"
@@ -446,13 +446,24 @@
       "inputs": [[12, 0, 0]]
     },
     {
-      "op": "fused_kernel_0xF5D62FC_F_f32",
+      "op": "fused_kernel_0x9DDCBF62_F_bf16",
       "name": "fusedTPCNode_0_14",
       "attrs": {
         "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
-        "output_0": "silu_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x210000000000  |  userMemorySection(type=Persistent, id=33)  |  ",
+        "output_0": "silu_fwd_bf16Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x210000000000  |  userMemorySection(type=Persistent, id=33)  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"40"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xF5D62FC_10_f32",
+      "name": "fusedTPCNode_0_15",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "silu_fwd_f32Y  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x220000000000  |  userMemorySection(type=Persistent, id=34)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"41"
       },
       "inputs": [[0, 0, 0]]
     }
@@ -460,7 +471,7 @@
   "arg_nodes": [
     0
   ],
-  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41],
-  "heads": [[13, 0, 0], [14, 0, 0], [15, 0, 0], [16, 0, 0], [17, 0, 0], [18, 0, 0], [19, 0, 0], [20, 0, 0], [21, 0, 0], [22, 0, 0], [23, 0, 0], [24, 0, 0], [25, 0, 0], [26, 0, 0], [27, 0, 0], [28, 0, 0], [29, 0, 0], [30, 0, 0], [31, 0, 0], [32, 0, 0], [33, 0, 0], [34, 0, 0], [35, 0, 0], [36, 0, 0], [37, 0, 0], [38, 0, 0], [39, 0, 0], [40, 0, 0], [41, 0, 0]],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42],
+  "heads": [[13, 0, 0], [14, 0, 0], [15, 0, 0], [16, 0, 0], [17, 0, 0], [18, 0, 0], [19, 0, 0], [20, 0, 0], [21, 0, 0], [22, 0, 0], [23, 0, 0], [24, 0, 0], [25, 0, 0], [26, 0, 0], [27, 0, 0], [28, 0, 0], [29, 0, 0], [30, 0, 0], [31, 0, 0], [32, 0, 0], [33, 0, 0], [34, 0, 0], [35, 0, 0], [36, 0, 0], [37, 0, 0], [38, 0, 0], [39, 0, 0], [40, 0, 0], [41, 0, 0], [42, 0, 0]],
   "attrs": {"mxnet_version": ["int", 10200]}
 }
