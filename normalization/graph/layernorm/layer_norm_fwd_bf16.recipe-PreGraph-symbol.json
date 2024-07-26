@@ -1,0 +1,42 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "Gamma",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "Beta",
+      "inputs": []
+    },
+    {
+      "op": "layer_norm_fwd_bf16",
+      "name": "LayerNorm",
+      "attrs": {
+        "input:0": "X  |  float16  |  Sizes = [1,64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "Gamma  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "input:2": "Beta  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "output_0": "Y  |  float16  |  Sizes = [1,64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "output_1": "mean_square  |  float32  |  Sizes = [1,64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 32768, 512, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isPersistent  |  userMemorySection(type=Persistent, id=8)  |  ",
+        "output_2": "std  |  float32  |  Sizes = [1,64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 32768, 512, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isPersistent  |  userMemorySection(type=Persistent, id=9)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0], [2, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1,
+    2
+  ],
+  "node_row_ptr": [0, 1, 2, 3],
+  "heads": [[3, 0, 0], [3, 1, 0], [3, 2, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

@@ -1,0 +1,64 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "cast_bf16_to_f16",
+      "name": "LayerNorm_complex/cast_bf16_to_f16_0",
+      "attrs": {
+        "input:0": "X  |  bf16  |  Sizes = [1,64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "f16-1_209  |  float16  |  Sizes = [1,64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x70000000000  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "Gamma",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "Beta",
+      "inputs": []
+    },
+    {
+      "op": "layer_norm_fwd_f16",
+      "name": "LayerNorm_complex/layer_norm_fwd_f16_2",
+      "attrs": {
+        "input:0": "f16-1_209  |  float16  |  Sizes = [1,64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x70000000000  |  ",
+        "input:1": "Gamma  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "input:2": "Beta  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "output_0": "f16-3_210  |  float16  |  Sizes = [1,64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "output_1": "mean_square  |  float32  |  Sizes = [1,64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 32768, 512, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x80000000000  |  userMemorySection(type=Persistent, id=8)  |  ",
+        "output_2": "std  |  float32  |  Sizes = [1,64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 32768, 512, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x90000000000  |  userMemorySection(type=Persistent, id=9)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0], [2, 0, 0], [3, 0, 0]]
+    },
+    {
+      "op": "cast_f16_to_bf16",
+      "name": "LayerNorm_complex/cast_f16_to_bf16_4",
+      "attrs": {
+        "input:0": "f16-3_210  |  float16  |  Sizes = [1,64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "output_0": "Y  |  bf16  |  Sizes = [1,64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x70000000000  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[4, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    2,
+    3
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5],
+  "heads": [[4, 1, 0], [4, 2, 0], [5, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

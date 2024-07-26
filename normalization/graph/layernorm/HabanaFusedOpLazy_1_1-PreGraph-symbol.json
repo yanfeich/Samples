@@ -1,0 +1,108 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_1_/placeholder/1",
+      "inputs": []
+    },
+    {
+      "op": "Reshape",
+      "name": "Reshape83",
+      "attrs": {
+        "input:0": "tensor_1_/placeholder/1  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "tensor_6  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor_2_/placeholder/2",
+      "inputs": []
+    },
+    {
+      "op": "Reshape",
+      "name": "Reshape84",
+      "attrs": {
+        "input:0": "tensor_2_/placeholder/2  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "output_0": "tensor_7  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[2, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "Reshape",
+      "name": "Reshape85",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  float32  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "tensor_8  |  float32  |  Sizes = [1,1,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 2097152, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[4, 0, 0]]
+    },
+    {
+      "op": "layer_norm_fwd_f32",
+      "name": "TPC86",
+      "attrs": {
+        "input:0": "tensor_8  |  float32  |  Sizes = [1,1,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 2097152, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  ",
+        "input:1": "tensor_7  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  ",
+        "input:2": "tensor_6  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  ",
+        "output_0": "tensor_9  |  float32  |  Sizes = [1,1,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 2097152, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  ",
+        "output_1": "tensor_10  |  float32  |  Sizes = [1,1,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 512, 512, 4, 4]  |  data = 0, sizeInBytes = 512  |  ",
+        "output_2": "tensor_11  |  float32  |  Sizes = [1,1,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 512, 512, 4, 4]  |  data = 0, sizeInBytes = 512  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"3"
+      },
+      "inputs": [[5, 0, 0], [3, 0, 0], [1, 0, 0]]
+    },
+    {
+      "op": "Reshape",
+      "name": "Reshape87",
+      "attrs": {
+        "input:0": "tensor_9  |  float32  |  Sizes = [1,1,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 2097152, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  ",
+        "output_0": "tensor_3_id_44_aten__native_layer_norm  |  float32  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  isPersistent  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"4"
+      },
+      "inputs": [[6, 0, 0]]
+    },
+    {
+      "op": "Reshape",
+      "name": "Reshape88",
+      "attrs": {
+        "input:0": "tensor_10  |  float32  |  Sizes = [1,1,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 512, 512, 4, 4]  |  data = 0, sizeInBytes = 512  |  ",
+        "output_0": "tensor_4_id_46_aten__native_layer_norm  |  float32  |  Sizes = [64,2,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 8, 4, 4]  |  data = 0, sizeInBytes = 512  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"5"
+      },
+      "inputs": [[6, 1, 0]]
+    },
+    {
+      "op": "Reshape",
+      "name": "Reshape89",
+      "attrs": {
+        "input:0": "tensor_11  |  float32  |  Sizes = [1,1,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 512, 512, 4, 4]  |  data = 0, sizeInBytes = 512  |  ",
+        "output_0": "tensor_5_id_48_aten__native_layer_norm  |  float32  |  Sizes = [64,2,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 8, 4, 4]  |  data = 0, sizeInBytes = 512  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"6"
+      },
+      "inputs": [[6, 2, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    2,
+    4
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "heads": [[7, 0, 0], [8, 0, 0], [9, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
