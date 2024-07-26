@@ -227,13 +227,26 @@ int main(int argc, char *argv[])
     synLaunchTensorInfoExt X_launch;
     X_launch.tensorName = "X";
     X_launch.pTensorAddress = X_device;
+    //X_launch.tensorId = 0;
 
     synLaunchTensorInfoExt Y_launch;
     Y_launch.tensorName = "Y";
     Y_launch.pTensorAddress = Y_device;
-
+    //Y_launch.tensorId = 1;
+    
     std::vector<synLaunchTensorInfoExt> launch_info = {X_launch, /*B_launch,*/ Y_launch};
 
+    // retrieve mapping of tensorName <--> tensorId
+    const char* tensorNames[2] = {};
+    uint64_t    tensorIds[2];
+    tensorNames[0] = launch_info[0].tensorName;
+    tensorNames[1] = launch_info[1].tensorName;
+    synTensorRetrieveIds(recipeHandle, tensorNames, tensorIds, 2);
+    launch_info[0].tensorId = tensorIds[0];
+    launch_info[1].tensorId = tensorIds[1];
+    std::cout << tensorIds[0] << std::endl;
+    std::cout << tensorIds[1] << std::endl;
+    
     status = synLaunchExt(compute, launch_info.data(), launch_info.size(), hbm_addr, recipeHandle, 0);
 
     status = synEventRecord(compute_event, compute);
@@ -248,7 +261,6 @@ int main(int argc, char *argv[])
     std::cout << "compute stream status: " << status << std::endl;
 
     // copy data from device to host
-    //memset(Y_host, 8, Y_size);
     status = synMemCopyAsync(d2h, Y_device, Y_size, (uint64_t)Y_host, DRAM_TO_HOST);
     std::cout << "copy Y from device to host status: " << status << std::endl;
     assert(status == synSuccess && "Failed to call Y synMemCopyAsync()");
