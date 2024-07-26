@@ -73,11 +73,11 @@ int main(int argc, char *argv[])
         {
             X_size = X_size * 2;
             Y_size = Y_size * 2;
-            tensor_type = syn_type_f16;
+            tensor_type = syn_type_fp16;
         }
 
         synTensorDescriptor X_desc;
-        X_desc.m_dataType = syn_type_bf16;
+        X_desc.m_dataType = tensor_type;
         X_desc.m_dims = 3UL;
         X_desc.m_name = "X";
         memset(X_desc.m_strides, 0, sizeof(X_desc.m_strides));
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
         assert(status == synSuccess && "Failed to call synSectionCreate()");
 
         synTensorDescriptor Y_desc;
-        Y_desc.m_dataType = syn_type_bf16;
+        Y_desc.m_dataType = tensor_type;
         Y_desc.m_dims = 3UL;
         Y_desc.m_name = "Y";
         memset(Y_desc.m_strides, 0, sizeof(Y_desc.m_strides));
@@ -139,15 +139,15 @@ int main(int argc, char *argv[])
         mean_square.m_name = "mean_square";
         memset(mean_square.m_strides, 0, sizeof(Y_desc.m_strides));
         memset(mean_square.m_sizes, 0, sizeof(Y_desc.m_sizes));
-        memcpy(mean_square.m_sizes, gamma_grad_shape, 3 * sizeof(unsigned));
+        memcpy(mean_square.m_sizes, mean_square_shape, 3 * sizeof(unsigned));
         synTensor syn_mean_square = nullptr;
 
-        status = synTensorCreate(&syn_mean_square, &mean_square, gamma_grad_SectionHandle, offset);
+        status = synTensorCreate(&syn_mean_square, &mean_square, mean_square_SectionHandle, offset);
         assert(status == synSuccess && "Failed to call synTensorCreate()");
         outputs.push_back(syn_mean_square);
 
         //************************************************ create rms node
-        std::string guid = "rms_norm_" + dtypes[i];
+        std::string guid = "rms_norm_ex_fwd_" + dtypes[i];
         std::string node_name = "RMS";
         ns_LayerNormKernel::Params rms_params;
         rms_params.epsValid = true;

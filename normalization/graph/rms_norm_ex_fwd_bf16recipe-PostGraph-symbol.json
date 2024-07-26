@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "Reshape",
+      "name": "reshape_0_0",
+      "attrs": {
+        "input:0": "X  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "tensor-185  |  float16  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = X, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xA25CE107_1_f32",
+      "name": "fusedTPCNode_0_0",
+      "attrs": {
+        "input:0": "tensor-185  |  float16  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isAliased = X, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "f32-11_8  |  float32  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "Gamma",
+      "inputs": []
+    },
+    {
+      "op": "rms_norm_fwd_f32",
+      "name": "RMS_complex/rms_norm_ex_fwd_bf16_1/rms_norm_fwd_f32_12",
+      "attrs": {
+        "input:0": "f32-11_8  |  float32  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "input:1": "Gamma  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "f32-13_9  |  float32  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = tensor-186, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_1": "f32-14_10  |  float32  |  Sizes = [8192,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isAliased = mean_square, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[2, 0, 0], [3, 0, 0]]
+    },
+    {
+      "op": "Reshape",
+      "name": "reshape_14_14",
+      "attrs": {
+        "input:0": "f32-13_9  |  float32  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = tensor-186, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "tensor-186  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"3"
+      },
+      "inputs": [[4, 0, 0]]
+    },
+    {
+      "op": "Reshape",
+      "name": "RMS_complex/rms_norm_ex_fwd_bf16_1/reshape_17",
+      "attrs": {
+        "input:0": "f32-14_10  |  float32  |  Sizes = [8192,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isAliased = mean_square, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "mean_square  |  float32  |  Sizes = [64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 512, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x70000000000  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"4"
+      },
+      "inputs": [[4, 1, 0]]
+    },
+    {
+      "op": "fused_kernel_0x5C64DE93_2_f16",
+      "name": "fusedTPCNode_0_1",
+      "attrs": {
+        "input:0": "tensor-186  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  location = in DRAM  |  dramOffset = 0x8000000  |  ",
+        "output_0": "Y  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"5"
+      },
+      "inputs": [[5, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    3
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6, 7],
+  "heads": [[6, 0, 0], [7, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

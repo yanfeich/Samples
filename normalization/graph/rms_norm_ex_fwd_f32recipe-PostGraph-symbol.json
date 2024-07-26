@@ -1,0 +1,67 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "Reshape",
+      "name": "RMS_complex/rms_norm_ex_fwd_f32_5/reshape_4",
+      "attrs": {
+        "input:0": "X  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "f32-5_399  |  float32  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = X, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "Gamma",
+      "inputs": []
+    },
+    {
+      "op": "rms_norm_fwd_f32",
+      "name": "RMS_complex/rms_norm_ex_fwd_f32_5/rms_norm_fwd_f32_6",
+      "attrs": {
+        "input:0": "f32-5_399  |  float32  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = X, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "input:1": "Gamma  |  float32  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 4]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "f32-7_400  |  float32  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = Y, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_1": "f32-8_401  |  float32  |  Sizes = [8192,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isAliased = mean_square, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0], [2, 0, 0]]
+    },
+    {
+      "op": "Reshape",
+      "name": "RMS_complex/rms_norm_ex_fwd_f32_5/reshape_9",
+      "attrs": {
+        "input:0": "f32-7_400  |  float32  |  Sizes = [8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = Y, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "Y  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[3, 0, 0]]
+    },
+    {
+      "op": "Reshape",
+      "name": "RMS_complex/rms_norm_ex_fwd_f32_5/reshape_10",
+      "attrs": {
+        "input:0": "f32-8_401  |  float32  |  Sizes = [8192,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isAliased = mean_square, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "mean_square  |  float32  |  Sizes = [64,128,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [32768, 512, 4, 4]  |  data = 0, sizeInBytes = 32768  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x70000000000  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"3"
+      },
+      "inputs": [[3, 1, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    2
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5],
+  "heads": [[4, 0, 0], [5, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

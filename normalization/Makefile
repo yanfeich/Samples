@@ -1,6 +1,6 @@
 make:
 	g++ -std=gnu++11 -I/usr/include/habanalabs \
-        -I${SPDLOG_ROOT} -Wall -g -o rms_test rms.cpp \
+        -I${SPDLOG_ROOT} -Wall -g -o rms rms.cpp \
         -L/usr/lib/habanalabs/ -lSynapse -ldl
 
 dev:
@@ -9,8 +9,8 @@ dev:
         -I${SYNAPSE_ROOT}/src/common/ \
         -I${SYNAPSE_ROOT}/src/graph_compiler/ \
         -I${SPECS_EXT_ROOT}/ \
-        -g -o rms_test rms.cpp \
+        -g -o rms rms.cpp \
         -L${SYNAPSE_RELEASE_BUILD}/lib/ -lSynapse -ldl
 
 clean:
-	rm -f rms_test __repro
+	rm -f rms __repro
