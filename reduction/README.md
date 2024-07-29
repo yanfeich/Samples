@@ -29,5 +29,5 @@ make
 ## run
 
 ```bash
-./rms
+./reduction
 ```
