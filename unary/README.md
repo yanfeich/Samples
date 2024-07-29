@@ -44,5 +44,5 @@ make
 ## run
 
 ```bash
-./rms
+./unary
 ```
