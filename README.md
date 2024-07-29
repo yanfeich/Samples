@@ -44,6 +44,10 @@ located in `/usr/include/habanalabs`
 |-- synapse_api_types.h
 |-- synapse_common_types.h
 |-- synapse_common_types.hpp
-`-- synapse_types.h
+|-- synapse_types.h
 
 ```
+
+## Build Graph
+
+![synapse](imgs/synapse.png)

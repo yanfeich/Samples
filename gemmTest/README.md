@@ -1,6 +1,6 @@
 # Synapse API
 
-![synapse](imgs/synapse.png)
+
 
 ## build
 
