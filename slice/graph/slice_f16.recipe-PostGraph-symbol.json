@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "Slice",
+      "name": "Slice",
+      "attrs": {
+        "input:0": "X  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "Y_memcpy_353  |  float16  |  Sizes = [64,64,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 33554432  |  isAliased = X, type = slice, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "Y_memcpy_353_internal",
+      "attrs": {
+        "input:0": "Y_memcpy_353  |  float16  |  Sizes = [64,64,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 33554432  |  isAliased = X, type = slice, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "output_0": "Y  |  float16  |  Sizes = [64,64,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [33554432, 524288, 8192, 2]  |  data = 0, sizeInBytes = 33554432  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0
+  ],
+  "node_row_ptr": [0, 1, 2],
+  "heads": [[2, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
