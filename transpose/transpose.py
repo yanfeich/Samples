@@ -11,7 +11,6 @@ T = 2
 M = 32
 D = 128
 
-
 x = torch.randn([B, M, T, D]).to(torch.float32).to('hpu')
 ht.synchronize()
 

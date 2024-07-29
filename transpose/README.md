@@ -1,5 +1,11 @@
 # Synapse API
 
+## guid
+
+```bash
+transpose
+```
+
 ## build
 
 ```bash
