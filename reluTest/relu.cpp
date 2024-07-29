@@ -249,6 +249,7 @@ int main(int argc, char *argv[])
     std::cout << tensorIds[1] << std::endl;
     
     status = synLaunchExt(compute, launch_info.data(), launch_info.size(), hbm_addr, recipeHandle, 0);
+    assert(status == synSuccess && "Failed to call synLaunchExt()");
 
     status = synEventRecord(compute_event, compute);
     assert(status == synSuccess && "Failed to call synEventRecord()");
