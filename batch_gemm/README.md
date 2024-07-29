@@ -3,7 +3,7 @@
 ## guid
 
 ```bash
-slice
+batch_gemm
 ```
 
 ## build
@@ -15,5 +15,5 @@ make
 ## run
 
 ```bash
-./slice
+./batch_gemm
 ```
