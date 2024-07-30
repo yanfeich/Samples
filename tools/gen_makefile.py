@@ -32,4 +32,3 @@ for ii in ff:
 
     with open(makefile, 'w') as fp:
         fp.writelines(lines)
-
