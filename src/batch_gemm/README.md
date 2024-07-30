@@ -8,6 +8,8 @@ batch_gemm
 
 ## params
 
+located in `/usr/include/habanalabs/synapse_common_types.hpp`
+
 ```cpp
 struct synGEMMParams
 {

@@ -9,6 +9,7 @@ transpose
 ## params
 
 ```cpp
+// located in 
 struct synTransposeParams
 {
     TransposePermutationDim permutation[MAX_DIMENSIONS_NUM];
