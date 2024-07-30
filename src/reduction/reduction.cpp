@@ -90,7 +90,6 @@ int main(int argc, char *argv[])
             std::string node_name = guid;
             ns_Reduction::Params params;
             params.reductionDimension = 0;
-            std::cout << node_name << ", " << X_desc.m_name << ", " << Y_desc.m_name << std::endl;
             status = synNodeCreate(graphHandle,
                                    inputs.data(),
                                    outputs.data(),
