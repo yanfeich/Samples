@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "I",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "S",
+      "inputs": []
+    },
+    {
+      "op": "index_copy_fwd_f16",
+      "name": "Index_Copy",
+      "attrs": {
+        "input:0": "X  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "I  |  int32  |  Sizes = [1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [4, 4]  |  data = 0, sizeInBytes = 4  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "input:2": "S  |  float16  |  Sizes = [64,1,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [524288, 8192, 8192, 2]  |  data = 0, sizeInBytes = 524288  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "output_0": "Y  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0], [2, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1,
+    2
+  ],
+  "node_row_ptr": [0, 1, 2, 3],
+  "heads": [[3, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
