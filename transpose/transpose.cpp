@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
     assert(status == synSuccess && "Failed to call synTensorCreate()");
     outputs.push_back(syn_Y);
 
-    //************************************************ create rms node
+    //************************************************ create transpose node
     std::string guid = "transpose";
     std::string node_name = "Transpose";
     synTransposeParams params;
