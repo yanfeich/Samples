@@ -9,5 +9,5 @@ make
 ## run
 
 ```bash
-./rms
+./gather
 ```
