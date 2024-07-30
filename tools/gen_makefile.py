@@ -3,8 +3,6 @@ import os
 BASE = '../src'
 
 ff = os.listdir(BASE)
-import pdb
-pdb.set_trace()
 
 for ii in ff:
     jj = os.path.join(BASE, ii)
@@ -23,11 +21,12 @@ for ii in ff:
         for cpp_file in cpp_files:
             lines.append('\tg++ -std=gnu++11 -I/usr/include/habanalabs -Wall -g -o {} {}.cpp -L/usr/lib/habanalabs/ -lSynapse -ldl'.format(cpp_file, cpp_file))
             lines.append('\tmkdir -p ../../bin')
-            lines.append('\tmv {} ../../bin'.format(cpp_file))
+            lines.append('\tcp -rf {} ../../bin'.format(cpp_file))
     
     lines.append('clean:')
     for cpp_file in cpp_files:
         lines.append('\trm -rf ../../bin/{}'.format(cpp_file))
+        lines.append('\trm -rf {}'.format(cpp_file))
     lines = [i+'\n' for i in lines]
 
     with open(makefile, 'w') as fp:
