@@ -6,32 +6,21 @@
       "inputs": []
     },
     {
-      "op": "cast_f16_to_bf16",
-      "name": "cast_0_2_cast_input0",
+      "op": "cast_bf16_to_f32",
+      "name": "CAST_1",
       "attrs": {
-        "input:0": "X  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
-        "output_0": "cast_0_2_cast_input0_174  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "input:0": "X  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "Y  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
         "Bundle_idx": "N/A",
         "Exec_idx":"0"
       },
       "inputs": [[0, 0, 0]]
-    },
-    {
-      "op": "cast_bf16_to_f32",
-      "name": "cast_0_2",
-      "attrs": {
-        "input:0": "cast_0_2_cast_input0_174  |  bf16  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  location = in DRAM  |  dramOffset = 0x0  |  ",
-        "output_0": "Y  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
-        "Bundle_idx": "N/A",
-        "Exec_idx":"1"
-      },
-      "inputs": [[1, 0, 0]]
     }
   ],
   "arg_nodes": [
     0
   ],
-  "node_row_ptr": [0, 1, 2],
-  "heads": [[2, 0, 0]],
+  "node_row_ptr": [0, 1],
+  "heads": [[1, 0, 0]],
   "attrs": {"mxnet_version": ["int", 10200]}
 }

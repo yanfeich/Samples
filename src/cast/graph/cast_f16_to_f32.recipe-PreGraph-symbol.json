@@ -7,7 +7,7 @@
     },
     {
       "op": "cast_f16_to_f32",
-      "name": "cast_1_2",
+      "name": "CAST_1",
       "attrs": {
         "input:0": "X  |  float16  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [67108864, 1048576, 8192, 2]  |  data = 0, sizeInBytes = 67108864  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
         "output_0": "Y  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",

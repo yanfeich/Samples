@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_1_/placeholder/1",
+      "inputs": []
+    },
+    {
+      "op": "Reshape",
+      "name": "TPC56_complex/reshape_0",
+      "attrs": {
+        "input:0": "tensor_1_/placeholder/1  |  int32  |  Sizes = [32,4]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 16, 4]  |  data = 0, sizeInBytes = 512  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "i32-1_182  |  int32  |  Sizes = [128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 4]  |  data = 0, sizeInBytes = 512  |  isAliased = tensor_1_/placeholder/1, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "gather_bf16",
+      "name": "TPC56_complex/gather_bf16_2",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  bf16  |  Sizes = [10,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1280, 128, 2]  |  data = 0, sizeInBytes = 1280  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "i32-1_182  |  int32  |  Sizes = [128]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [512, 4]  |  data = 0, sizeInBytes = 512  |  isAliased = tensor_1_/placeholder/1, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "bf16-3_183  |  bf16  |  Sizes = [128,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 128, 2]  |  data = 0, sizeInBytes = 16384  |  isAliased = tensor_2_id_25_aten__embedding, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[2, 0, 0], [1, 0, 0]]
+    },
+    {
+      "op": "Reshape",
+      "name": "TPC56_complex/reshape_4",
+      "attrs": {
+        "input:0": "bf16-3_183  |  bf16  |  Sizes = [128,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 128, 2]  |  data = 0, sizeInBytes = 16384  |  isAliased = tensor_2_id_25_aten__embedding, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "tensor_2_id_25_aten__embedding  |  bf16  |  Sizes = [32,4,64]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [16384, 512, 128, 2]  |  data = 0, sizeInBytes = 16384  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[3, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    2
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4],
+  "heads": [[4, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

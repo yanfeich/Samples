@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
     X_desc.m_name = "X";
     memset(X_desc.m_strides, 0, sizeof(X_desc.m_strides));
     memset(X_desc.m_sizes, 0, sizeof(X_desc.m_sizes));
-    memcpy(X_desc.m_sizes, X_shape, 4 * sizeof(unsigned));
+    memcpy(X_desc.m_sizes, X_shape, 1 * sizeof(unsigned));
 
     synTensor syn_X = nullptr;
     status = synTensorCreate(&syn_X, &X_desc, X_SectionHandle, offset);
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     B_desc.m_name = "B";
     memset(B_desc.m_strides, 0, sizeof(B_desc.m_strides));
     memset(B_desc.m_sizes, 0, sizeof(B_desc.m_sizes));
-    memcpy(B_desc.m_sizes, B_shape, 2 * sizeof(unsigned));
+    memcpy(B_desc.m_sizes, B_shape, 1 * sizeof(unsigned));
     synTensor syn_B = nullptr;
     status = synTensorCreate(&syn_B, &B_desc, nullptr, offset);
     assert(status == synSuccess && "Failed to call synTensorCreate()");
@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
     Y_desc.m_name = "Y";
     memset(Y_desc.m_strides, 0, sizeof(Y_desc.m_strides));
     memset(Y_desc.m_sizes, 0, sizeof(Y_desc.m_sizes));
-    memcpy(Y_desc.m_sizes, Y_shape, 4 * sizeof(unsigned));
+    memcpy(Y_desc.m_sizes, Y_shape, 1 * sizeof(unsigned));
     synTensor syn_Y = nullptr;
 
     status = synTensorCreate(&syn_Y, &Y_desc, Y_SectionHandle, offset);

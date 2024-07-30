@@ -1,0 +1,26 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "cast_f32_to_f8",
+      "name": "CAST_1",
+      "attrs": {
+        "input:0": "X  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "Y  |  float8  |  Sizes = [64,128,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [33554432, 524288, 4096, 1]  |  data = 0, sizeInBytes = 33554432  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0
+  ],
+  "node_row_ptr": [0, 1],
+  "heads": [[1, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
