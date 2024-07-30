@@ -26,5 +26,5 @@ make
 ## run
 
 ```bash
-./rms
+./transpose
 ```
