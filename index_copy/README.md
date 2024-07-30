@@ -18,5 +18,5 @@ make
 ## run
 
 ```bash
-./rms
+./index_copy
 ```
