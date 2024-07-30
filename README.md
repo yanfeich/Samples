@@ -24,3 +24,7 @@ The tool reproduces networks written in Synapse API (C\C++) or serialized graphs
 - [reluTest](./src/reluTest/README.md)
 - [slice](./src/slice/README.md)
 - [linear](./src/linear/README.md)
+
+## Doc
+
+[Doc](./doc/README.md)
