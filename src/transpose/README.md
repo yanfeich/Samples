@@ -6,6 +6,16 @@
 transpose
 ```
 
+## params
+
+```cpp
+struct synTransposeParams
+{
+    TransposePermutationDim permutation[MAX_DIMENSIONS_NUM];
+    unsigned int tensorDim;
+};
+```
+
 ## build
 
 ```bash
