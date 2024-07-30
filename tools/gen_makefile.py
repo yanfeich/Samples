@@ -1,8 +1,13 @@
 import os
-ff = os.listdir('./src')
+
+BASE = '../src'
+
+ff = os.listdir(BASE)
+import pdb
+pdb.set_trace()
 
 for ii in ff:
-    jj = os.path.join('./src', ii)
+    jj = os.path.join(BASE, ii)
     if not os.path.isdir(jj):
         continue
 
