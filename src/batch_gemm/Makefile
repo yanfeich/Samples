@@ -1,16 +1,10 @@
 make:
-	g++ -std=gnu++11 -I/usr/include/habanalabs \
-        -I${SPDLOG_ROOT} -Wall -g -o batch_gemm batch_gemm.cpp \
-        -L/usr/lib/habanalabs/ -lSynapse -ldl
-
+	g++ -std=gnu++11 -I/usr/include/habanalabs -Wall -g -o batch_gemm batch_gemm.cpp -L/usr/lib/habanalabs/ -lSynapse -ldl
+	mkdir -p ../../bin
+	mv batch_gemm ../../bin
 dev:
-	g++ -std=gnu++11 -I${SYNAPSE_ROOT}/include \
-        -I${SYNAPSE_ROOT}/src/runtime/ \
-        -I${SYNAPSE_ROOT}/src/common/ \
-        -I${SYNAPSE_ROOT}/src/graph_compiler/ \
-        -I${SPECS_EXT_ROOT}/ \
-        -g -o batch_gemm batch_gemm.cpp \
-        -L${SYNAPSE_RELEASE_BUILD}/lib/ -lSynapse -ldl
-
+	g++ -std=gnu++11 -I/usr/include/habanalabs -Wall -g -o batch_gemm batch_gemm.cpp -L/usr/lib/habanalabs/ -lSynapse -ldl
+	mkdir -p ../../bin
+	mv batch_gemm ../../bin
 clean:
-	rm -f batch_gemm __repro
+	rm -rf ../../bin/batch_gemm

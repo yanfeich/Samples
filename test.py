@@ -1,8 +1,6 @@
 import os
-ff = os.listdir('./')
-ff = [i for i in ff if os.path.isdir(i) and not i.startswith('.')]
+ff = os.listdir('./src')
+ff = [i for i in ff if os.path.isdir(os.path.join('./src', i))]
 
 for f in ff:
-    print(f'- [{f}](./{f}/README.md)')
-
-print(ff)
+    print(f'- [{f}](./src/{f}/README.md)')

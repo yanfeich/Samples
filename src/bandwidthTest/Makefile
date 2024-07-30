@@ -1,16 +1,10 @@
 make:
-	g++ -std=gnu++11 -I/usr/include/habanalabs \
-        -I${SPDLOG_ROOT} -Wall -g -o gaudi_bw_test bandwidth.cpp \
-        -L/usr/lib/habanalabs/ -lSynapse -ldl
-
+	g++ -std=gnu++11 -I/usr/include/habanalabs -Wall -g -o bandwidth bandwidth.cpp -L/usr/lib/habanalabs/ -lSynapse -ldl
+	mkdir -p ../../bin
+	mv bandwidth ../../bin
 dev:
-	g++ -std=gnu++11 -I${SYNAPSE_ROOT}/include \
-        -I${SYNAPSE_ROOT}/src/runtime/ \
-        -I${SYNAPSE_ROOT}/src/common/ \
-        -I${SYNAPSE_ROOT}/src/graph_compiler/ \
-        -I${SPECS_EXT_ROOT}/ \
-        -g -o gaudi_bw_test bandwidth.cpp \
-        -L${SYNAPSE_RELEASE_BUILD}/lib/ -lSynapse -ldl
-
+	g++ -std=gnu++11 -I/usr/include/habanalabs -Wall -g -o bandwidth bandwidth.cpp -L/usr/lib/habanalabs/ -lSynapse -ldl
+	mkdir -p ../../bin
+	mv bandwidth ../../bin
 clean:
-	rm -f gaudi_bw_test __repro
+	rm -rf ../../bin/bandwidth
