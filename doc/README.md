@@ -644,6 +644,49 @@ synStatus SYN_API_CALL synLaunchExt(const synStreamHandle             streamHand
 //!
 /*!
  ***************************************************************************************************
+ *   @brief Records an event.
+ *
+ *  Captures in eventHandle the contents of streamHandle at the time of this call. eventHandle and streamHandle must be
+ *  from the same device. Calls such as synEventQuery() or synStreamWaitEvent() will then examine
+ *  or wait for completion of the work that was captured. Uses of streamHandle after this call do not
+ *  modify eventHandle.
+ *  synEventRecord() can be called multiple times on the same event and will overwrite the
+ *  previously captured state. Other APIs such as synStreamWaitEvent() use the most recently
+ *  captured state at the time of the API call, and are not affected by later calls to
+ *  synEventRecord(). Before the first call to synEventRecord(), an event represents an empty set of
+ *  work, so for example synEventQuery() would return synSuccess.
+ *  recording to the same handle from two different threads is not thread safe
+ *
+ *   @param eventHandle       [in]  Event to record
+ *   @param streamHandle      [in]  Stream to record event for
+ *
+ *   @return                  The status of the operation
+ ***************************************************************************************************
+ */
+synStatus SYN_API_CALL synEventRecord( synEventHandle          eventHandle,
+                                       const synStreamHandle   streamHandle );
+
+//!
+/*!
+ ***************************************************************************************************
+ *   @brief Makes a stream wait on an event.
+ *
+ *   Makes all future work submitted to streamHandle wait for completion of eventHandle. eventHandle needs to be
+ *   registered to other stream than streamHandle. It works on the same device only (not between devices)
+ *
+ *   @param streamHandle      [in]  Stream to wait
+ *   @param eventHandle       [in]  Event to wait on
+ *   @param flags             [in]  Parameters for the operation (must be 0)
+ *
+ *   @return                  The status of the operation
+ ***************************************************************************************************
+ */
+synStatus SYN_API_CALL synStreamWaitEvent( const synStreamHandle       streamHandle,
+                                           synEventHandle              eventHandle,
+                                           const uint32_t              flags );
+//!
+/*!
+ ***************************************************************************************************
  *   @brief Waits for all commands in stream to complete.
  *
  *   Blocking function; Waits until the device has completed all operations in the stream specified
