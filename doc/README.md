@@ -1,5 +1,6 @@
 # Synapse C++ API
 
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -17,6 +18,14 @@
       - [Serialize and DeSerialize](#serialize-and-deserialize)
     - [Runtime](#runtime)
       - [Acquire Device](#acquire-device)
+      - [Get Workspace](#get-workspace)
+      - [Malloc Host Tensor](#malloc-host-tensor)
+      - [Malloc Device Tensor](#malloc-device-tensor)
+      - [Create Stream](#create-stream)
+      - [Data between Host and Device](#data-between-host-and-device)
+      - [Get Graph IO Tensor ID](#get-graph-io-tensor-id)
+      - [launch Graph](#launch-graph)
+      - [Sync](#sync)
     - [Profiling](#profiling)
     - [Error Code(synStatus)](#error-codesynstatus)
   - [Debug](#debug)
@@ -24,6 +33,8 @@
     - [Dump Graphs](#dump-graphs)
 
 <!-- /code_chunk_output -->
+
+
 
 ## header files
 
