@@ -1,0 +1,166 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "W",
+      "inputs": []
+    },
+    {
+      "op": "ExpandDims",
+      "name": "linear_complex/batch_gemm_0_expand2",
+      "attrs": {
+        "input:0": "W  |  bf16  |  Sizes = [4096,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 22016, 2]  |  data = 0, sizeInBytes = 90177536  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "W_c585  |  bf16  |  Sizes = [1,4096,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 90177536  |  isAliased = W, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "Split",
+      "name": "W_c585_bundle_2/split_internal/0",
+      "attrs": {
+        "input:0": "W_c585  |  bf16  |  Sizes = [1,4096,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 90177536  |  isAliased = W, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "W_c585_0_0_0_0_0_memcpy_599  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  isAliased = W_c585, type = concat, offset: 0  |  location = in DRAM  |  ",
+        "output_1": "W_c585_0_1_0_0_0_memcpy_600  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  isAliased = W_c585, type = concat, offset: 22544384  |  location = in DRAM  |  ",
+        "output_2": "W_c585_0_2_0_0_0_memcpy_601  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  isAliased = W_c585, type = concat, offset: 45088768  |  location = in DRAM  |  ",
+        "output_3": "W_c585_0_3_0_0_0_memcpy_602  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  isAliased = W_c585, type = concat, offset: 67633152  |  location = in DRAM  |  ",
+        "Bundle_idx": "2",
+        "Op_idx":"0",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0]]
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "W_c585_bundle_2/memcpy/0",
+      "attrs": {
+        "input:0": "W_c585_0_0_0_0_0_memcpy_599  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  isAliased = W_c585, type = concat, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "W_c585_slice_0_0_0_0_0__0__bundle_2_591  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [22544384, 22544384, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  location = in SRAM  |  sramOffset = 0x1000fffffd080000  |  ",
+        "Bundle_idx": "2",
+        "Op_idx":"1",
+        "Exec_idx":"2"
+      },
+      "inputs": [[2, 0, 0]]
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "W_c585_bundle_2/memcpy/1",
+      "attrs": {
+        "input:0": "W_c585_0_1_0_0_0_memcpy_600  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  isAliased = W_c585, type = concat, offset: 22544384  |  location = in DRAM  |  ",
+        "output_0": "W_c585_slice_0_1_0_0_0__0__bundle_2_593  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [22544384, 22544384, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  location = in SRAM  |  sramOffset = 0x1000fffffe600000  |  ",
+        "Bundle_idx": "2",
+        "Op_idx":"2",
+        "Exec_idx":"3"
+      },
+      "inputs": [[2, 1, 0]]
+    },
+    {
+      "op": "null",
+      "name": "S",
+      "inputs": []
+    },
+    {
+      "op": "BatchGemm",
+      "name": "linear_complex/batch_gemm_0_bundle_2/op_0",
+      "attrs": {
+        "input:0": "S  |  bf16  |  Sizes = [32,20,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [14090240, 440320, 22016, 2]  |  data = 0, sizeInBytes = 14090240  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "W_c585_slice_0_0_0_0_0__0__bundle_2_591  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [22544384, 22544384, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  location = in SRAM  |  sramOffset = 0x1000fffffd080000  |  ",
+        "output_0": "O_slice_0_0_0_0_0__0__bundle_2_592  |  bf16  |  Sizes = [32,20,1024]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 1310720  |  isAliased = O, type = concat, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "Parameters": "transpose_a=false, transpose_b=true",
+        "Bundle_idx": "2",
+        "Op_idx":"3",
+        "Exec_idx":"4"
+      },
+      "inputs": [[5, 0, 0], [3, 0, 0]]
+    },
+    {
+      "op": "BatchGemm",
+      "name": "linear_complex/batch_gemm_0_bundle_2/op_1",
+      "attrs": {
+        "input:0": "S  |  bf16  |  Sizes = [32,20,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [14090240, 440320, 22016, 2]  |  data = 0, sizeInBytes = 14090240  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "W_c585_slice_0_1_0_0_0__0__bundle_2_593  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [22544384, 22544384, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  location = in SRAM  |  sramOffset = 0x1000fffffe600000  |  ",
+        "output_0": "O_slice_1_0_0_0_0__0__bundle_2_594  |  bf16  |  Sizes = [32,20,1024]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 1310720  |  isAliased = O, type = concat, offset: 2048  |  location = in DRAM  |  isSparseLayout  |  ",
+        "Parameters": "transpose_a=false, transpose_b=true",
+        "Bundle_idx": "2",
+        "Op_idx":"4",
+        "Exec_idx":"5"
+      },
+      "inputs": [[5, 0, 0], [4, 0, 0]]
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "W_c585_bundle_2/memcpy/2",
+      "attrs": {
+        "input:0": "W_c585_0_2_0_0_0_memcpy_601  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  isAliased = W_c585, type = concat, offset: 45088768  |  location = in DRAM  |  ",
+        "output_0": "W_c585_slice_0_2_0_0_0__0__bundle_2_595  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [22544384, 22544384, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  location = in SRAM  |  sramOffset = 0x1000fffffd080000  |  ",
+        "Bundle_idx": "2",
+        "Op_idx":"5",
+        "Exec_idx":"6"
+      },
+      "inputs": [[2, 2, 0]]
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "W_c585_bundle_2/memcpy/3",
+      "attrs": {
+        "input:0": "W_c585_0_3_0_0_0_memcpy_602  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 90177536, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  isAliased = W_c585, type = concat, offset: 67633152  |  location = in DRAM  |  ",
+        "output_0": "W_c585_slice_0_3_0_0_0__0__bundle_2_597  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [22544384, 22544384, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  location = in SRAM  |  sramOffset = 0x1000fffffe600000  |  ",
+        "Bundle_idx": "2",
+        "Op_idx":"6",
+        "Exec_idx":"7"
+      },
+      "inputs": [[2, 3, 0]]
+    },
+    {
+      "op": "BatchGemm",
+      "name": "linear_complex/batch_gemm_0_bundle_2/op_2",
+      "attrs": {
+        "input:0": "S  |  bf16  |  Sizes = [32,20,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [14090240, 440320, 22016, 2]  |  data = 0, sizeInBytes = 14090240  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "W_c585_slice_0_2_0_0_0__0__bundle_2_595  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [22544384, 22544384, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  location = in SRAM  |  sramOffset = 0x1000fffffd080000  |  ",
+        "output_0": "O_slice_2_0_0_0_0__0__bundle_2_596  |  bf16  |  Sizes = [32,20,1024]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 1310720  |  isAliased = O, type = concat, offset: 4096  |  location = in DRAM  |  isSparseLayout  |  ",
+        "Parameters": "transpose_a=false, transpose_b=true",
+        "Bundle_idx": "2",
+        "Op_idx":"7",
+        "Exec_idx":"8"
+      },
+      "inputs": [[5, 0, 0], [8, 0, 0]]
+    },
+    {
+      "op": "BatchGemm",
+      "name": "linear_complex/batch_gemm_0_bundle_2/op_3",
+      "attrs": {
+        "input:0": "S  |  bf16  |  Sizes = [32,20,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [14090240, 440320, 22016, 2]  |  data = 0, sizeInBytes = 14090240  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "W_c585_slice_0_3_0_0_0__0__bundle_2_597  |  bf16  |  Sizes = [1,1024,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [22544384, 22544384, 22016, 2]  |  data = 0, sizeInBytes = 22544384  |  location = in SRAM  |  sramOffset = 0x1000fffffe600000  |  ",
+        "output_0": "O_slice_3_0_0_0_0__0__bundle_2_598  |  bf16  |  Sizes = [32,20,1024]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 1310720  |  isAliased = O, type = concat, offset: 6144  |  location = in DRAM  |  isSparseLayout  |  ",
+        "Parameters": "transpose_a=false, transpose_b=true",
+        "Bundle_idx": "2",
+        "Op_idx":"8",
+        "Exec_idx":"9"
+      },
+      "inputs": [[5, 0, 0], [9, 0, 0]]
+    },
+    {
+      "op": "Concatenate",
+      "name": "O_bundle_2/concat_logical_internal/0",
+      "attrs": {
+        "input:0": "O_slice_0_0_0_0_0__0__bundle_2_592  |  bf16  |  Sizes = [32,20,1024]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 1310720  |  isAliased = O, type = concat, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "input:1": "O_slice_1_0_0_0_0__0__bundle_2_594  |  bf16  |  Sizes = [32,20,1024]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 1310720  |  isAliased = O, type = concat, offset: 2048  |  location = in DRAM  |  isSparseLayout  |  ",
+        "input:2": "O_slice_2_0_0_0_0__0__bundle_2_596  |  bf16  |  Sizes = [32,20,1024]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 1310720  |  isAliased = O, type = concat, offset: 4096  |  location = in DRAM  |  isSparseLayout  |  ",
+        "input:3": "O_slice_3_0_0_0_0__0__bundle_2_598  |  bf16  |  Sizes = [32,20,1024]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 1310720  |  isAliased = O, type = concat, offset: 6144  |  location = in DRAM  |  isSparseLayout  |  ",
+        "output_0": "O  |  bf16  |  Sizes = [32,20,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 5242880  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "2",
+        "Op_idx":"9",
+        "Exec_idx":"10"
+      },
+      "inputs": [[6, 0, 0], [7, 0, 0], [10, 0, 0], [11, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    5
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "heads": [[12, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

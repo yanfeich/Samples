@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "S",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "W",
+      "inputs": []
+    },
+    {
+      "op": "linear_fwd_bf16",
+      "name": "linear",
+      "attrs": {
+        "input:0": "S  |  bf16  |  Sizes = [32,20,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [14090240, 440320, 22016, 2]  |  data = 0, sizeInBytes = 14090240  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "W  |  bf16  |  Sizes = [4096,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 22016, 2]  |  data = 0, sizeInBytes = 90177536  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "O  |  bf16  |  Sizes = [32,20,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [5242880, 163840, 8192, 2]  |  data = 0, sizeInBytes = 5242880  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1
+  ],
+  "node_row_ptr": [0, 1, 2],
+  "heads": [[2, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

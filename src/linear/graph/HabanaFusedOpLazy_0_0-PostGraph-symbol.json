@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "tensor_0_/placeholder/0_bundle_0/memcpy/0",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  bf16  |  Sizes = [20,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [440320, 22016, 2]  |  data = 0, sizeInBytes = 440320  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "tensor_0_/placeholder/0_slice_0_0_0_0_0__0__bundle_0_182  |  bf16  |  Sizes = [20,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [440320, 22016, 2]  |  data = 0, sizeInBytes = 440320  |  location = in SRAM  |  sramOffset = 0x1000fffffd080000  |  ",
+        "Bundle_idx": "0",
+        "Op_idx":"0",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor_1_/placeholder/1",
+      "inputs": []
+    },
+    {
+      "op": "GEMM",
+      "name": "TPC3_complex/gemm_0_bundle_0/op_0",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0_slice_0_0_0_0_0__0__bundle_0_182  |  bf16  |  Sizes = [20,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [440320, 22016, 2]  |  data = 0, sizeInBytes = 440320  |  location = in SRAM  |  sramOffset = 0x1000fffffd080000  |  ",
+        "input:1": "tensor_1_/placeholder/1  |  bf16  |  Sizes = [4096,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 22016, 2]  |  data = 0, sizeInBytes = 90177536  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "bf16-5_5  |  bf16  |  Sizes = [20,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [163840, 8192, 2]  |  data = 0, sizeInBytes = 163840  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "Parameters": "transpose_a=false, transpose_b=true",
+        "Bundle_idx": "0",
+        "Op_idx":"1",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0], [2, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor_2_/placeholder/2",
+      "inputs": []
+    },
+    {
+      "op": "add_bf16",
+      "name": "TPC3_complex/add_bf16_6_complex/add_bf16_0",
+      "attrs": {
+        "input:0": "bf16-5_5  |  bf16  |  Sizes = [20,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [163840, 8192, 2]  |  data = 0, sizeInBytes = 163840  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "input:1": "tensor_2_/placeholder/2  |  bf16  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [8192, 2]  |  data = 0, sizeInBytes = 8192  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "output_0": "tensor_3_id_21_aten__linear  |  bf16  |  Sizes = [20,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [163840, 8192, 2]  |  data = 0, sizeInBytes = 163840  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x70000000000  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[3, 0, 0], [4, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    2,
+    4
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5],
+  "heads": [[5, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

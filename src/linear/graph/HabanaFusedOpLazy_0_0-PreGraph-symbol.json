@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor_1_/placeholder/1",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor_2_/placeholder/2",
+      "inputs": []
+    },
+    {
+      "op": "linear_fwd_bf16",
+      "name": "TPC3",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  bf16  |  Sizes = [20,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [440320, 22016, 2]  |  data = 0, sizeInBytes = 440320  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "tensor_1_/placeholder/1  |  bf16  |  Sizes = [4096,11008]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [90177536, 22016, 2]  |  data = 0, sizeInBytes = 90177536  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "input:2": "tensor_2_/placeholder/2  |  bf16  |  Sizes = [4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [8192, 2]  |  data = 0, sizeInBytes = 8192  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "output_0": "tensor_3_id_21_aten__linear  |  bf16  |  Sizes = [20,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [163840, 8192, 2]  |  data = 0, sizeInBytes = 163840  |  isPersistent  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0], [2, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1,
+    2
+  ],
+  "node_row_ptr": [0, 1, 2, 3],
+  "heads": [[3, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

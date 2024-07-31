@@ -1,4 +1,4 @@
-# Softmax
+# Linear
 
 ## build
 
@@ -9,5 +9,5 @@ make
 ## run
 
 ```bash
-./softmax
+./linear
 ```
