@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "S",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor-886",
+      "inputs": []
+    },
+    {
+      "op": "argmax_fwd_i8",
+      "name": "Argmax_complex/argmax_fwd_i8_0_complex/argmax_fwd_i8_0",
+      "attrs": {
+        "input:0": "S  |  int8  |  Sizes = [32,32000]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1024000, 32000, 1]  |  data = 0, sizeInBytes = 1024000  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "tensor-886  |  int32  |  Sizes = [256]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1024, 4]  |  data = 0x55faab7c5800, sizeInBytes = 1024  |  location = in DRAM  |  dramOffset = 0x10000002180  |  isStaticParam  |  bufferDtype=float32  |  ",
+        "output_0": "O  |  int32  |  Sizes = [32,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [128, 4, 4]  |  data = 0, sizeInBytes = 128  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1
+  ],
+  "node_row_ptr": [0, 1, 2],
+  "heads": [[2, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

@@ -1,0 +1,44 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor-175",
+      "inputs": []
+    },
+    {
+      "op": "argmax_fwd_bf16",
+      "name": "TPC3_complex/argmax_fwd_bf16_0_complex/argmax_fwd_bf16_0",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  bf16  |  Sizes = [32,32000]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2048000, 64000, 2]  |  data = 0, sizeInBytes = 2048000  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "tensor-175  |  int32  |  Sizes = [256]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1024, 4]  |  data = 0x55bacc906c00, sizeInBytes = 1024  |  location = in DRAM  |  dramOffset = 0x10000001800  |  isStaticParam  |  bufferDtype=float32  |  ",
+        "output_0": "tensor_2  |  int32  |  Sizes = [32,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [128, 4, 4]  |  data = 0, sizeInBytes = 128  |  isAliased = tensor_1_id_5_aten__argmax, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0]]
+    },
+    {
+      "op": "Reshape",
+      "name": "Reshape4",
+      "attrs": {
+        "input:0": "tensor_2  |  int32  |  Sizes = [32,1]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [128, 4, 4]  |  data = 0, sizeInBytes = 128  |  isAliased = tensor_1_id_5_aten__argmax, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "tensor_1_id_5_aten__argmax  |  int32  |  Sizes = [32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [128, 4]  |  data = 0, sizeInBytes = 128  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[2, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1
+  ],
+  "node_row_ptr": [0, 1, 2, 3],
+  "heads": [[3, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
