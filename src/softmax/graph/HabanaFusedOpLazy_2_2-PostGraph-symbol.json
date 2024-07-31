@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "fused_kernel_0xDD1DE559_1_0_f32",
+      "name": "fusedTPCNode_0_0",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  hfloat8  |  Sizes = [64,2,4096]  |  expBias = 7, scale = 1  |    |  ModelParam = 0  |  strides = [524288, 8192, 4096, 1]  |  data = 0, sizeInBytes = 524288  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "tensor-538  |  float32  |  Sizes = [16,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [524288, 32768, 16384, 4]  |  data = 0, sizeInBytes = 524288  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "fused_kernel_0xDD1DE559_1_1_f32",
+      "name": "fusedTPCNode_0_1",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  hfloat8  |  Sizes = [64,2,4096]  |  expBias = 7, scale = 1  |    |  ModelParam = 0  |  strides = [524288, 8192, 4096, 1]  |  data = 0, sizeInBytes = 524288  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "tensor-538  |  float32  |  Sizes = [16,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [524288, 32768, 16384, 4]  |  data = 0, sizeInBytes = 524288  |  location = in DRAM  |  dramOffset = 0x0  |  ",
+        "output_0": "tensor_5  |  hfloat8  |  Sizes = [64,2,4096]  |  expBias = 7, scale = 1  |    |  ModelParam = 0  |  strides = [524288, 8192, 4096, 1]  |  data = 0, sizeInBytes = 524288  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0
+  ],
+  "node_row_ptr": [0, 1, 2],
+  "heads": [[2, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

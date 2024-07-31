@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "cast_f8_to_f32",
+      "name": "TPC176",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  float8  |  Sizes = [64,2,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [524288, 8192, 4096, 1]  |  data = 0, sizeInBytes = 524288  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "tensor_2  |  float32  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "softmax_fwd_f32",
+      "name": "TPC177",
+      "attrs": {
+        "input:0": "tensor_2  |  float32  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  ",
+        "output_0": "tensor_3_id_51_aten___softmax  |  float32  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0]]
+    },
+    {
+      "op": "cast_f32_to_f8",
+      "name": "TPC178",
+      "attrs": {
+        "input:0": "tensor_3_id_51_aten___softmax  |  float32  |  Sizes = [64,2,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2097152, 32768, 16384, 4]  |  data = 0, sizeInBytes = 2097152  |  ",
+        "output_0": "tensor_5  |  float8  |  Sizes = [64,2,4096]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [524288, 8192, 4096, 1]  |  data = 0, sizeInBytes = 524288  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[2, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0
+  ],
+  "node_row_ptr": [0, 1, 2, 3],
+  "heads": [[3, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

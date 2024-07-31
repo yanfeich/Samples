@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "X",
+      "inputs": []
+    },
+    {
+      "op": "StaticReshape",
+      "name": "softmax_op_complex/softmax_fwd_f32_0_reshape_TPC_out1",
+      "attrs": {
+        "input:0": "X  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "_reshaped_534  |  float32  |  Sizes = [1,8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = X, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "softmax_fwd_f32",
+      "name": "softmax_op_complex/softmax_fwd_f32_0_optimized",
+      "attrs": {
+        "input:0": "_reshaped_534  |  float32  |  Sizes = [1,8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = X, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "_reshaped_535  |  float32  |  Sizes = [1,8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = Y, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[1, 0, 0]]
+    },
+    {
+      "op": "StaticReshape",
+      "name": "softmax_op_complex/softmax_fwd_f32_0_reshape_TPC_out0",
+      "attrs": {
+        "input:0": "_reshaped_535  |  float32  |  Sizes = [1,8192,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 134217728, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isAliased = Y, type = alias, offset: 0  |  location = in DRAM  |  ",
+        "output_0": "Y  |  float32  |  Sizes = [64,128,4096]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [134217728, 2097152, 16384, 4]  |  data = 0, sizeInBytes = 134217728  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[2, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0
+  ],
+  "node_row_ptr": [0, 1, 2, 3],
+  "heads": [[3, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
