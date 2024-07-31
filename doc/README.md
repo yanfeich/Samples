@@ -638,6 +638,8 @@ synStatus SYN_API_CALL synLaunchExt(const synStreamHandle             streamHand
 
 #### Sync
 
+![sync](imgs/sync.png)
+
 ```cpp
 //!
 /*!
