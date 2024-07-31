@@ -25,6 +25,6 @@ The tool reproduces networks written in Synapse API (C\C++) or serialized graphs
 - [slice](./src/slice/README.md)
 - [linear](./src/linear/README.md)
 
-## Doc
+## API Guide
 
 [Doc](./doc/README.md)
