@@ -13,6 +13,7 @@ L = 32
 T = 16
 M = 20
 N = 10
+B = 64
 
 states = torch.randn([M, L]).to(torch.bfloat16).to('hpu')
 append = torch.randn([N, L]).to(torch.bfloat16).to('hpu')
@@ -23,10 +24,22 @@ with torch.no_grad():
 ht.synchronize()
 
 
-states = torch.randn([M, L]).to(torch.bfloat16).to('hpu')
-append = torch.randn([M, T]).to(torch.bfloat16).to('hpu')
+states = torch.randn([M, L]).to(torch.float16).to('hpu')
+append = torch.randn([M, T]).to(torch.float16).to('hpu')
 
 with torch.no_grad():
-    states.cat(append, 1)
+    outputs = torch.concat((states, append), 1)
+
+ht.synchronize()
+
+list = []
+list.append(torch.randn([B, M, L]).to(torch.float32).to('hpu'))
+list.append(torch.randn([B, M, L]).to(torch.float32).to('hpu'))
+list.append(torch.randn([B, M, L]).to(torch.float32).to('hpu'))
+list.append(torch.randn([B, M, L]).to(torch.float32).to('hpu'))
+list.append(torch.randn([B, M, L]).to(torch.float32).to('hpu'))
+
+with torch.no_grad():
+    outputs = torch.concat(list, -1)
 
 ht.synchronize()
