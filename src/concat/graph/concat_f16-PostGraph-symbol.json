@@ -1,0 +1,73 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "S1",
+      "inputs": []
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "S1_memcpy_363_internal",
+      "attrs": {
+        "input:0": "S1  |  float16  |  Sizes = [10,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [640, 64, 2]  |  data = 0, sizeInBytes = 640  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "S1_memcpy_363  |  float16  |  Sizes = [10,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 64, 2]  |  data = 0, sizeInBytes = 640  |  isAliased = O, type = concat, offset: 0  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "S2",
+      "inputs": []
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "S2_memcpy_364_internal",
+      "attrs": {
+        "input:0": "S2  |  float16  |  Sizes = [20,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [1280, 64, 2]  |  data = 0, sizeInBytes = 1280  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "S2_memcpy_364  |  float16  |  Sizes = [20,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 64, 2]  |  data = 0, sizeInBytes = 1280  |  isAliased = O, type = concat, offset: 640  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[2, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "S3",
+      "inputs": []
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "S3_memcpy_365_internal",
+      "attrs": {
+        "input:0": "S3  |  float16  |  Sizes = [30,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [1920, 64, 2]  |  data = 0, sizeInBytes = 1920  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "output_0": "S3_memcpy_365  |  float16  |  Sizes = [30,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 64, 2]  |  data = 0, sizeInBytes = 1920  |  isAliased = O, type = concat, offset: 1920  |  location = in DRAM  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[4, 0, 0]]
+    },
+    {
+      "op": "Concatenate",
+      "name": "RecipeDestroy()"",
+      "attrs": {
+        "input:0": "S1_memcpy_363  |  float16  |  Sizes = [10,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 64, 2]  |  data = 0, sizeInBytes = 640  |  isAliased = O, type = concat, offset: 0  |  location = in DRAM  |  ",
+        "input:1": "S2_memcpy_364  |  float16  |  Sizes = [20,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 64, 2]  |  data = 0, sizeInBytes = 1280  |  isAliased = O, type = concat, offset: 640  |  location = in DRAM  |  ",
+        "input:2": "S3_memcpy_365  |  float16  |  Sizes = [30,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 64, 2]  |  data = 0, sizeInBytes = 1920  |  isAliased = O, type = concat, offset: 1920  |  location = in DRAM  |  ",
+        "output_0": "O  |  float16  |  Sizes = [60,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 64, 2]  |  data = 0, sizeInBytes = 3840  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x70000000000  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"3"
+      },
+      "inputs": [[1, 0, 0], [3, 0, 0], [5, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    2,
+    4
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5, 6],
+  "heads": [[6, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

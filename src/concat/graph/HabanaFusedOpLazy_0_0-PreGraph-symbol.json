@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor_1_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "Concatenate",
+      "name": "Concatenate3",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  bf16  |  Sizes = [20,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1280, 64, 2]  |  data = 0, sizeInBytes = 1280  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "tensor_1_/placeholder/0  |  bf16  |  Sizes = [10,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [640, 64, 2]  |  data = 0, sizeInBytes = 640  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "tensor_2_id_9_aten__cat  |  bf16  |  Sizes = [30,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1920, 64, 2]  |  data = 0, sizeInBytes = 1920  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1
+  ],
+  "node_row_ptr": [0, 1, 2],
+  "heads": [[2, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

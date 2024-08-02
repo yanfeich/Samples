@@ -1,0 +1,54 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor_1_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor_2_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor_3_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "tensor_4_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "Concatenate",
+      "name": "Concatenate116",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  float32  |  Sizes = [64,20,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [163840, 2560, 128, 4]  |  data = 0, sizeInBytes = 163840  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "tensor_1_/placeholder/0  |  float32  |  Sizes = [64,20,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [163840, 2560, 128, 4]  |  data = 0, sizeInBytes = 163840  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "input:2": "tensor_2_/placeholder/0  |  float32  |  Sizes = [64,20,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [163840, 2560, 128, 4]  |  data = 0, sizeInBytes = 163840  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "input:3": "tensor_3_/placeholder/0  |  float32  |  Sizes = [64,20,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [163840, 2560, 128, 4]  |  data = 0, sizeInBytes = 163840  |  isPersistent  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "input:4": "tensor_4_/placeholder/0  |  float32  |  Sizes = [64,20,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [163840, 2560, 128, 4]  |  data = 0, sizeInBytes = 163840  |  isPersistent  |  userMemorySection(type=Persistent, id=8)  |  ",
+        "output_0": "tensor_5_id_50_aten__cat  |  float32  |  Sizes = [64,20,160]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [819200, 12800, 640, 4]  |  data = 0, sizeInBytes = 819200  |  isPersistent  |  userMemorySection(type=Persistent, id=9)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0], [2, 0, 0], [3, 0, 0], [4, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4, 5],
+  "heads": [[5, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

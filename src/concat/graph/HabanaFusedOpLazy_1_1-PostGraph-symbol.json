@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "tensor_0_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "tensor_0_/placeholder/0_memcpy_358_internal",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0  |  float16  |  Sizes = [20,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [1280, 64, 2]  |  data = 0, sizeInBytes = 1280  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x40000000000  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "output_0": "tensor_0_/placeholder/0_memcpy_358  |  float16  |  Sizes = [20,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [1920, 96, 2]  |  data = 0, sizeInBytes = 1280  |  isAliased = tensor_2_id_24_aten__cat, type = concat, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0]]
+    },
+    {
+      "op": "null",
+      "name": "tensor_1_/placeholder/0",
+      "inputs": []
+    },
+    {
+      "op": "DmaMemcpy",
+      "name": "tensor_1_/placeholder/0_memcpy_359_internal",
+      "attrs": {
+        "input:0": "tensor_1_/placeholder/0  |  float16  |  Sizes = [20,16]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [640, 32, 2]  |  data = 0, sizeInBytes = 640  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x50000000000  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "output_0": "tensor_1_/placeholder/0_memcpy_359  |  float16  |  Sizes = [20,16]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [1920, 96, 2]  |  data = 0, sizeInBytes = 640  |  isAliased = tensor_2_id_24_aten__cat, type = concat, offset: 64  |  location = in DRAM  |  isSparseLayout  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"1"
+      },
+      "inputs": [[2, 0, 0]]
+    },
+    {
+      "op": "Concatenate",
+      "name": "Concatenate59",
+      "attrs": {
+        "input:0": "tensor_0_/placeholder/0_memcpy_358  |  float16  |  Sizes = [20,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [1920, 96, 2]  |  data = 0, sizeInBytes = 1280  |  isAliased = tensor_2_id_24_aten__cat, type = concat, offset: 0  |  location = in DRAM  |  isSparseLayout  |  ",
+        "input:1": "tensor_1_/placeholder/0_memcpy_359  |  float16  |  Sizes = [20,16]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [1920, 96, 2]  |  data = 0, sizeInBytes = 640  |  isAliased = tensor_2_id_24_aten__cat, type = concat, offset: 64  |  location = in DRAM  |  isSparseLayout  |  ",
+        "output_0": "tensor_2_id_24_aten__cat  |  float16  |  Sizes = [20,48]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [1920, 96, 2]  |  data = 0, sizeInBytes = 1920  |  isPersistent  |  location = in DRAM  |  dramOffset = 0x60000000000  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"2"
+      },
+      "inputs": [[1, 0, 0], [3, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    2
+  ],
+  "node_row_ptr": [0, 1, 2, 3, 4],
+  "heads": [[4, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}

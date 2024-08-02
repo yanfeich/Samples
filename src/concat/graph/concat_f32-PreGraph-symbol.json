@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    {
+      "op": "null",
+      "name": "S1",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "S2",
+      "inputs": []
+    },
+    {
+      "op": "null",
+      "name": "S3",
+      "inputs": []
+    },
+    {
+      "op": "Concatenate",
+      "name": "at",
+      "attrs": {
+        "input:0": "S1  |  float32  |  Sizes = [10,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [1280, 128, 4]  |  data = 0, sizeInBytes = 1280  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
+        "input:1": "S2  |  float32  |  Sizes = [20,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [2560, 128, 4]  |  data = 0, sizeInBytes = 2560  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
+        "input:2": "S3  |  float32  |  Sizes = [30,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 128, 4]  |  data = 0, sizeInBytes = 3840  |  isPersistent  |  userMemorySection(type=Persistent, id=6)  |  ",
+        "output_0": "O  |  float32  |  Sizes = [60,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [7680, 128, 4]  |  data = 0, sizeInBytes = 7680  |  isPersistent  |  userMemorySection(type=Persistent, id=7)  |  ",
+        "Bundle_idx": "N/A",
+        "Exec_idx":"0"
+      },
+      "inputs": [[0, 0, 0], [1, 0, 0], [2, 0, 0]]
+    }
+  ],
+  "arg_nodes": [
+    0,
+    1,
+    2
+  ],
+  "node_row_ptr": [0, 1, 2, 3],
+  "heads": [[3, 0, 0]],
+  "attrs": {"mxnet_version": ["int", 10200]}
+}
