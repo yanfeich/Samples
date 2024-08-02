@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
         outputs.push_back(syn_O);
         
         std::string guid = "concat";
-        std::string node_name = "concat" + dtypes[j];
+        std::string node_name = "Concat";
         synConcatenateParams concat_params;
         concat_params.axis = 1;
 

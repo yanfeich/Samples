@@ -50,7 +50,7 @@
     },
     {
       "op": "Concatenate",
-      "name": "ncat",
+      "name": "Concat",
       "attrs": {
         "input:0": "S1_memcpy_180  |  bf16  |  Sizes = [10,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 64, 2]  |  data = 0, sizeInBytes = 640  |  isAliased = O, type = concat, offset: 0  |  location = in DRAM  |  ",
         "input:1": "S2_memcpy_181  |  bf16  |  Sizes = [20,32]  |  expBias = 0, scale = 1  |    |  ModelParam = 0  |  strides = [3840, 64, 2]  |  data = 0, sizeInBytes = 1280  |  isAliased = O, type = concat, offset: 640  |  location = in DRAM  |  ",

@@ -17,7 +17,7 @@
     },
     {
       "op": "Concatenate",
-      "name": "RecipeDestroy()"",
+      "name": "Concat",
       "attrs": {
         "input:0": "S1  |  float16  |  Sizes = [10,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [640, 64, 2]  |  data = 0, sizeInBytes = 640  |  isPersistent  |  userMemorySection(type=Persistent, id=4)  |  ",
         "input:1": "S2  |  float16  |  Sizes = [20,32]  |  expBias = 15, scale = 1  |    |  ModelParam = 0  |  strides = [1280, 64, 2]  |  data = 0, sizeInBytes = 1280  |  isPersistent  |  userMemorySection(type=Persistent, id=5)  |  ",
