@@ -23,15 +23,16 @@ int main(int argc, char *argv[])
     };
 
     synStatus status = synInitialize();
-    assert(status == synSuccess && "Failed to call  synInitialize()");
+    assert(status == synSuccess && "Failed to call synInitialize()");
 
     uint32_t deviceId = 0;
-    status = synDeviceAcquire(&deviceId, nullptr);
-    assert(status == synSuccess && "Failed to call  synDeviceAcquire()");
+    synModuleId device_module_id = 1;
+    status = synDeviceAcquireByModuleId(&deviceId, device_module_id);
+    assert(status == synSuccess && "Failed to call synDeviceAcquireByModuleId()");
 
     synDeviceInfo deviceInfo;
     status = synDeviceGetInfo(deviceId, &deviceInfo);
-    assert(status == synSuccess && "Failed to call  synDeviceGetInfo()");
+    assert(status == synSuccess && "Failed to call synDeviceGetInfo()");
 
     synDeviceType device_type = deviceInfo.deviceType;
 
